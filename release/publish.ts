@@ -62,8 +62,8 @@ const publishPackages = () => {
 
   const publish = (releaseDir: string) => {
     s.cd(`${releaseDir}`);
-    if(s.exec('npm publish --dry-run').code !== 0) process.exit(1);  
-    // if(s.exec('npm publish').code !== 0) process.exit(1);
+    // if(s.exec('npm publish --dry-run').code !== 0) process.exit(1);  
+    if(s.exec('npm publish').code !== 0) process.exit(1);
   }
 
   publish(CONSTANTS.ReleaseDirBrowser);

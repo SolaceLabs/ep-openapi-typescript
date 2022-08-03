@@ -1,0 +1,35 @@
+{
+  "name": "@solace-iot-team/ep-openapi-browser",
+  "version": "1.1.1-ea",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "description": "Solace Event Portal - OpenAPI Client for Browser (Typescript)",
+  "homepage": "https://github.com/solace-iot-team/ep-openapi",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/solace-iot-team/ep-openapi"
+  },
+  "bugs": {
+    "url": "https://github.com/solace-iot-team/ep-openapi/issues"
+  },
+  "author": "Solace Corporation",
+  "contributors": [
+    {
+      "name": "Ricardo Gomez-Ulmke",
+      "email": "ricardo.gomez-ulmke@solace.com"
+    }
+  ],
+  "license": "MIT",
+  "keywords": [
+    "solace",
+    "asyncapi",
+    "api management",
+    "event portal"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "cache": ".cache/.npm",
+    "registry": "https://registry.npmjs.org",
+    "tag": "latest"
+  }
+}

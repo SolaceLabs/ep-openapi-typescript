@@ -13,7 +13,7 @@ import {
   EnumsService, 
   EnumValue, 
   EnumVersionResponse
-} from '../../../generated/@solace-iot-team/ep-openapi-node';
+} from '../../../generated/@solace-labs/ep-openapi-node';
 
 const scriptName: string = path.basename(__filename);
 TestLogger.logMessage(scriptName, ">>> starting ...");

@@ -1,16 +1,16 @@
 {
-  "name": "@solace-iot-team/ep-openapi-browser",
+  "name": "@solace-labs/ep-openapi-browser",
   "version": "1.1.1-ea",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "description": "Solace Event Portal - OpenAPI Client for Browser (Typescript)",
-  "homepage": "https://github.com/solace-iot-team/ep-openapi",
+  "homepage": "https://github.com/solace-labs/ep-openapi",
   "repository": {
     "type": "git",
-    "url": "https://github.com/solace-iot-team/ep-openapi"
+    "url": "https://github.com/solace-labs/ep-openapi"
   },
   "bugs": {
-    "url": "https://github.com/solace-iot-team/ep-openapi/issues"
+    "url": "https://github.com/solace-labs/ep-openapi/issues"
   },
   "author": "Solace Corporation",
   "contributors": [

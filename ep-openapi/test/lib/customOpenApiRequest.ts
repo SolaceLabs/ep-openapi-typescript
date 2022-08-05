@@ -4,10 +4,10 @@
 import { AbortController } from 'abort-controller';
 import FormData from 'form-data';
 import fetch, { BodyInit, Headers, RequestInit, Response } from 'node-fetch';
-import { ApiRequestOptions } from "../../generated/@solace-iot-team/ep-openapi-node/core/ApiRequestOptions";
-import { ApiResult } from "../../generated/@solace-iot-team/ep-openapi-node/core/ApiResult";
-import { ApiError, CancelablePromise, OpenAPIConfig } from "../../generated/@solace-iot-team/ep-openapi-node";
-import { OnCancel } from "../../generated/@solace-iot-team/ep-openapi-node/core/CancelablePromise";
+import { ApiRequestOptions } from "../../generated/@solace-labs/ep-openapi-node/core/ApiRequestOptions";
+import { ApiResult } from "../../generated/@solace-labs/ep-openapi-node/core/ApiResult";
+import { ApiError, CancelablePromise, OpenAPIConfig } from "../../generated/@solace-labs/ep-openapi-node";
+import { OnCancel } from "../../generated/@solace-labs/ep-openapi-node/core/CancelablePromise";
 
 
 const isDefined = <T>(value: T | null | undefined): value is Exclude<T, null | undefined> => {

@@ -11,32 +11,37 @@ Uses: `node-fetch`.
 ## Install
 
 ```bash
-npm install @solace-iot-team/ep-openapi-node
+npm install @solace-labs/ep-openapi-node
 ```
 
 ## Usage
 
 Configure OpenAPI object:
-````typescript
-import { OpenAPI } from '@solace-iot-team/ep-openapi-node';
+
+```typescript
+import { OpenAPI } from "@solace-labs/ep-openapi-node";
 
 // to use a different base url than specified in the spec:
-OpenAPI.BASE = '{base-url}';
+OpenAPI.BASE = "{base-url}";
 OpenAPI.WITH_CREDENTIALS = true;
 OpenAPI.CREDENTIALS = "include";
-OpenAPI.TOKEN = '{token}'
-````
+OpenAPI.TOKEN = "{token}";
+```
 
 Example: Create an Application Domain:
 
-````typescript
-import { ApplicationDomainResponse, ApplicationDomainsService } from '@solace-iot-team/ep-openapi-node';
+```typescript
+import {
+  ApplicationDomainResponse,
+  ApplicationDomainsService,
+} from "@solace-labs/ep-openapi-node";
 
-const applicationDomainResponse: ApplicationDomainResponse = await ApplicationDomainsService.createApplicationDomain({
-  requestBody: {
-    name: 'my-application-domain',
-  }
-});
-````
+const applicationDomainResponse: ApplicationDomainResponse =
+  await ApplicationDomainsService.createApplicationDomain({
+    requestBody: {
+      name: "my-application-domain",
+    },
+  });
+```
 
 ---

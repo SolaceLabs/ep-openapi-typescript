@@ -1,4 +1,4 @@
-# Development ep-openapi
+# Development ep-openapi-typescript
 
 
 ## Download Solace Event Portal Open API Spec

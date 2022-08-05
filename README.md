@@ -1,6 +1,6 @@
 # Solace Event Portal Open Api Generator
 
-[Issues & Feature Requests](https://github.com/solace-labs/ep-openapi-typescript/issues) |
+[Issues & Feature Requests](https://github.com/SolaceLabs/ep-openapi-typescript/issues)
 
 Generate Browser & Node Open Api Packages.
 

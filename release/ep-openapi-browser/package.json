@@ -4,13 +4,13 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "description": "Solace Event Portal - OpenAPI Client for Browser (Typescript)",
-  "homepage": "https://github.com/solace-labs/ep-openapi",
+  "homepage": "https://github.com/SolaceLabs/ep-openapi-typescript",
   "repository": {
     "type": "git",
-    "url": "https://github.com/solace-labs/ep-openapi"
+    "url": "https://github.com/SolaceLabs/ep-openapi-typescript"
   },
   "bugs": {
-    "url": "https://github.com/solace-labs/ep-openapi/issues"
+    "url": "https://github.com/SolaceLabs/ep-openapi-typescript/issues"
   },
   "author": "Solace Corporation",
   "contributors": [

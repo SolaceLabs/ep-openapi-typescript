@@ -50,9 +50,9 @@ const copyAssets = () => {
     if(s.cp('-r', `${srcDir}/*`, `${outDir}`).code !== 0) process.exit(1);  
   }
 
-  const SrcDirBrowser: string = `${CONSTANTS.WorkingEpOpenApiDir}/generated/@solace-iot-team/ep-openapi-browser`;
+  const SrcDirBrowser: string = `${CONSTANTS.WorkingEpOpenApiDir}/generated/@solace-labs/ep-openapi-browser`;
   const OutDirBrowser: string = `${CONSTANTS.ReleaseDirBrowser}/src`;
-  const SrcDirNode: string = `${CONSTANTS.WorkingEpOpenApiDir}/generated/@solace-iot-team/ep-openapi-node`;
+  const SrcDirNode: string = `${CONSTANTS.WorkingEpOpenApiDir}/generated/@solace-labs/ep-openapi-node`;
   const OutDirNode: string = `${CONSTANTS.ReleaseDirNode}/src`;
 
   console.log(`${logName}: starting ...`);

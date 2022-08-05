@@ -1,7 +1,7 @@
 
-import { ApiError } from "../../generated/@solace-iot-team/ep-openapi-node";
-import { ApiRequestOptions } from "../../generated/@solace-iot-team/ep-openapi-node/core/ApiRequestOptions";
-import { ApiResult } from "../../generated/@solace-iot-team/ep-openapi-node/core/ApiResult";
+import { ApiError } from "../../generated/@solace-labs/ep-openapi-node";
+import { ApiRequestOptions } from "../../generated/@solace-labs/ep-openapi-node/core/ApiRequestOptions";
+import { ApiResult } from "../../generated/@solace-labs/ep-openapi-node/core/ApiResult";
 import { ServerResponseUtil } from "./ServerResponseUtil";
 import { TestContext } from "./TestContext";
 

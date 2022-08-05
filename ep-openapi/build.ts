@@ -7,8 +7,8 @@ const scriptName: string = path.basename(__filename);
 const scriptDir: string = path.dirname(__filename);
 // files & dirs
 const inputApiSpecFile = 'resources/ep-openapi-spec.json';
-const outputOpenApiNodeClientDir = 'generated/@solace-iot-team/ep-openapi-node';
-const outputOpenApiBrowserClientDir = 'generated/@solace-iot-team/ep-openapi-browser';
+const outputOpenApiNodeClientDir = 'generated/@solace-labs/ep-openapi-node';
+const outputOpenApiBrowserClientDir = 'generated/@solace-labs/ep-openapi-browser';
 
 const prepare = () => {
   const funcName = 'prepare';

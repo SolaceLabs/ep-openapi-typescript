@@ -11,8 +11,8 @@ const scriptName: string = path.basename(__filename);
 TestLogger.logMessage(scriptName, ">>> starting ...");
 
 
-const ApplicationDomainName = `${TestConfig.getAppId()}/sep-openapi/${TestUtils.getUUID()}`;
-let ApplicationDomainId: string | undefined;
+const ApplicationDomainName = `${TestConfig.getAppId()}/ep-openapi/${TestUtils.getUUID()}`;
+let ApplicationDomainId: string;
 
 describe(`${scriptName}`, () => {
     
@@ -27,6 +27,7 @@ describe(`${scriptName}`, () => {
             name: ApplicationDomainName,
           }
         });
+        expect(applicationDomainResponse.data.id, TestLogger.createApiTestFailMessage('failed')).to.not.be.undefined;
         ApplicationDomainId = applicationDomainResponse.data.id;
       } catch(e) {
         expect(e instanceof ApiError, TestLogger.createNotApiErrorMesssage(e.message)).to.be.true;

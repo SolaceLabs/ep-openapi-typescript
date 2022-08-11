@@ -26,7 +26,8 @@
     ]
   },
   "include": [
-    "build.ts"
+    "build.ts",
+    "./generated/**/*.ts"
   ],
   "exclude": [
     "node_modules",

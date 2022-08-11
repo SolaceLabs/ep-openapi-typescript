@@ -3,7 +3,7 @@
    "info":{
       "title":"Event Portal Open API",
       "description":"# REST API Concepts\n\nSolace PubSub+ Event Portal provides RESTful APIs that you can use to manage your data in PubSub+ Cloud. The REST APIs\nallow you to model your event-driven architectures from your own client applications.\n\nThe following document describes the public REST APIs available for use in Event Portal 2.0. Please note that Event\nPortal 2.0 is in the Early Access release stage and is available for testing and early user feedback. These APIs are \nsubject to change until they are declared Generally Available. Objects created in this version will not be available in\nEvent Portal 1.0 and are not guaranteed to be persisted if you migrate your Event Portal 1.0 data later when data\nmigration to Event Portal 2.0 is supported.\n\n",
-      "version":"2.0.0-ea+001"
+      "version":"2.0.0-alpha.001"
    },
    "servers":[
       {

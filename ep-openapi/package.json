@@ -1,6 +1,6 @@
 {
   "name": "@solace-labs/ep-openapi",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Code gen and tests for Solace Event Portal Open Api",
   "scripts": {
     "build": "tsc && ts-node build.ts",
@@ -40,12 +40,12 @@
     "@types/supertest": "^2.0.11",
     "abort-controller": "^3.0.0",
     "chai": "^4.3.4",
+    "fetch-with-proxy": "^3.0.1",
     "form-data": "^4.0.0",
     "js-yaml": "^3.14.1",
     "jsonschema": "^1.4.1",
     "lodash": "^4.17.21",
     "mocha": "^8.4.0",
-    "node-fetch": "^2.6.7",
     "openapi-typescript-codegen": "^0.19.0",
     "shelljs": "^0.8.4",
     "sinon": "^11.1.2",

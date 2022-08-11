@@ -1,5 +1,6 @@
 import s from 'shelljs';
 import path from 'path';
+import fs from 'fs';
 import { CONSTANTS } from './CONSTANTS';
 
 const scriptName: string = path.basename(__filename);
@@ -63,6 +64,34 @@ const copyAssets = () => {
   console.log(`${logName}: success.`);
 }
 
+const createPackageJsonVersion = () => {
+  const funcName = 'createPackageJsonVersion';
+  const logName = `${scriptDir}/${scriptName}.${funcName}()`;
+
+  const InputApiSpecFile = `${CONSTANTS.WorkingEpOpenApiDir}/resources/ep-openapi-spec.json`;
+  const apiSpec: any = require(InputApiSpecFile);
+
+  const createVersion = (releaseDir: string) => {
+    const funcName = 'createPackageJsonVersion.createVersion';
+    const logName = `${scriptDir}/${scriptName}.${funcName}()`;
+    console.log(`${logName}: starting ${releaseDir}...`);
+
+    const PackageJsonFile = `${releaseDir}/package.json`;
+    const PackageJson = require(`${PackageJsonFile}`);
+    const apiSpecVersion = apiSpec.info.version;
+    console.log(`${logName}: apiSpecVersion = ${apiSpecVersion}`);
+    PackageJson.version = apiSpecVersion;
+    const newPackageJsonString = JSON.stringify(PackageJson, null, 2);
+    s.cp(`${PackageJsonFile}`, `${releaseDir}/.package.json`);
+    fs.writeFileSync(PackageJsonFile, newPackageJsonString);  
+    console.log(`${logName}: success.`);
+  }
+  // func main
+  console.log(`${logName}: starting ...`);
+  createVersion(CONSTANTS.ReleaseDirNode);
+  createVersion(CONSTANTS.ReleaseDirBrowser);
+  console.log(`${logName}: success.`);
+}
 const compileSrcs = () => {
   const funcName = 'compileSrcs';
   const logName = `${scriptDir}/${scriptName}.${funcName}()`;
@@ -88,6 +117,7 @@ const main = () => {
   copySourcesToWorkingDir();
   buildEpOpenApi();
   copyAssets();
+  createPackageJsonVersion();
   compileSrcs();
 
   console.log(`${logName}: success.`);

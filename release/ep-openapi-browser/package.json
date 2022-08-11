@@ -1,6 +1,6 @@
 {
   "name": "@solace-labs/ep-openapi-browser",
-  "version": "2.0.0-alpha.001",
+  "version": "2.0.0-alpha.002",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "description": "Solace Event Portal - OpenAPI Client for Browser (Typescript)",

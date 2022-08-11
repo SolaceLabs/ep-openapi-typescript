@@ -37,6 +37,30 @@ npx mocha --config test/.mocharc.yml test/specs/applicationDomain/main.spec.ts
 unset_source_env
 ````
 
+## Link
+
+```bash
+cd release
+./build.sh
+cd ep-openapi-node
+npm link
+```
+
+### Consuming Link
+```bash
+cd {consuming project}
+npm link @solace-labs/ep-openapi-node
+npm list
+```
+
+#### Unlink Consuming Link
+```bash
+cd {consuming project}
+npm unlink --no-save @solace-labs/ep-openapi-node
+# NOTE: now install the released package
+npm install
+npm list
+```
 
 ---
 

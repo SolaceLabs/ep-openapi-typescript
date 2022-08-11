@@ -74,30 +74,75 @@ const postProcessOpenApiNodeClient = () => {
   const logName = `${scriptDir}/${scriptName}.${funcName}()`;
   console.log(`${logName}: post processing Node OpenAPI Client ...`);
 
-  // request.ts
-  const requestTsFile = `${outputOpenApiNodeClientDir}/core/request.ts`;
-  const requestTsBackupFile = `${outputOpenApiNodeClientDir}/core/request.ts.backup`;
-  console.log(`${logName}: create backup file: ${requestTsBackupFile}`);
-  const code = s.cp(requestTsFile, requestTsBackupFile).code;
+  let code;
+  {
+    // request.ts
+    const requestTsFile = `${outputOpenApiNodeClientDir}/core/request.ts`;
+    const requestTsBackupFile = `${outputOpenApiNodeClientDir}/core/request.ts.backup`;
+    console.log(`${logName}: create backup file: ${requestTsBackupFile}`);
+    code = s.cp(requestTsFile, requestTsBackupFile).code;
+    if(code !== 0) throw new Error(`${logName}: code=${code}`);
+    // load requests.ts file to string
+    const requestTsBuffer: Buffer = fs.readFileSync(requestTsFile);
+    const requestTsString: string = requestTsBuffer.toString('utf-8');
+    // *************************
+    // fetch-with-proxy
+    // *************************
+    const searchFetchWithProxy = "import fetch, { BodyInit, Headers, RequestInit, Response } from 'node-fetch';"
+    const replaceFetchWithProxy = `
+  import { BodyInit, Headers, RequestInit, Response } from 'node-fetch';
+  import fetch from 'fetch-with-proxy';
+  `;
+    console.log(`${logName}: fetch-with-proxy: replace ${searchFetchWithProxy} with ${replaceFetchWithProxy}`);
+    const newRequestTsString: string = requestTsString.replace(searchFetchWithProxy, replaceFetchWithProxy);
+    fs.writeFileSync(requestTsFile, newRequestTsString);  
+    // *************************
+    // *************************
+    // OpenApi.BASE
+    // *************************
+    // const getUrl = (config: OpenAPIConfig, options: ApiRequestOptions): string => {
+    // const getUrl = async (config: OpenAPIConfig, options: ApiRequestOptions): Promise<string> => {
+    const search_getUrl = "const getUrl = (config: OpenAPIConfig, options: ApiRequestOptions): string => {";
+    const replace_getUrl = "const getUrl = async (config: OpenAPIConfig, options: ApiRequestOptions): Promise<string> => {";
+    console.log(`${logName}: getUrl: replace ${search_getUrl} with ${replace_getUrl}`);
+    const newRequestTsString2: string = newRequestTsString.replace(search_getUrl, replace_getUrl);
+    fs.writeFileSync(requestTsFile, newRequestTsString2);  
+    // const url = `${config.BASE}${path}`;
+    // const url = `${await resolve(options, config.BASE)}${path}`;
+    const search_url = "const url = `${config.BASE}${path}`";
+    const replace_url = "const url = `${await resolve(options, config.BASE)}${path}`";
+    console.log(`${logName}: getUrl().url: replace ${search_url} with ${replace_url}`);
+    const newRequestTsString3: string = newRequestTsString2.replace(search_url, replace_url);
+    fs.writeFileSync(requestTsFile, newRequestTsString3);  
+    // const url = getUrl(config, options);
+    // const url = await getUrl(config, options);
+    const search_request_url = "const url = getUrl(config, options)";
+    const replace_request_url = "const url = await getUrl(config, options)";
+    console.log(`${logName}: request().url: replace ${search_request_url} with ${replace_request_url}`);
+    const newRequestTsString4: string = newRequestTsString3.replace(search_request_url, replace_request_url);
+    fs.writeFileSync(requestTsFile, newRequestTsString4);  
+  }
+  {
+  // *************************
+  // OpenAPI.BASE with resolver
+  // *************************
+  // OpenAPI.ts
+  const OpenApiTsFile = `${outputOpenApiNodeClientDir}/core/OpenAPI.ts`;
+  const OpenApiTsBackupFile = `${outputOpenApiNodeClientDir}/core/OpenAPI.ts.backup`;
+  console.log(`${logName}: create backup file: ${OpenApiTsBackupFile}`);
+  code = s.cp(OpenApiTsFile, OpenApiTsBackupFile).code;
   if(code !== 0) throw new Error(`${logName}: code=${code}`);
-  // load file to string
-  const requestTsBuffer: Buffer = fs.readFileSync(requestTsFile);
-  const requestTsString: string = requestTsBuffer.toString('utf-8');
-  // *************************
-  // fetch-with-proxy
-  // *************************
-  const search = "import fetch, { BodyInit, Headers, RequestInit, Response } from 'node-fetch';"
-  const replace = `
-import { BodyInit, Headers, RequestInit, Response } from 'node-fetch';
-import fetch from 'fetch-with-proxy';
-`;
-  console.log(`${logName}: replace ${search} with ${replace}`);
-  const newRequestTsString: string = requestTsString.replace(search, replace);
-  fs.writeFileSync(requestTsFile, newRequestTsString);  
-  // *************************
+  // load OpenAPI.ts file to string
+  const OpenApiTsBuffer: Buffer = fs.readFileSync(OpenApiTsFile);
+  const OpenApiTsString: string = OpenApiTsBuffer.toString('utf-8');
 
-
-  
+  const search_OpenAPI_BASE = "BASE: string";
+  const replace_OpenAPI_BASE = "BASE: string | Resolver<string>";
+  console.log(`${logName}: OpenAPI.BASE: replace ${search_OpenAPI_BASE} with ${replace_OpenAPI_BASE}`);
+  const newOpenApiTsString: string = OpenApiTsString.replace(search_OpenAPI_BASE, replace_OpenAPI_BASE);
+  fs.writeFileSync(OpenApiTsFile, newOpenApiTsString);
+  // *************************
+  }
   console.log(`${logName}: success.`);
 }
 

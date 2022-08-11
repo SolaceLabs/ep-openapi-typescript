@@ -28,7 +28,8 @@
     ]
   },
   "include": [
-    "./**/*.spec.ts"
+    "./**/*.spec.ts",
+    "../generated/**/*.ts"
   ],
   "exclude": ["node_modules"]
 }

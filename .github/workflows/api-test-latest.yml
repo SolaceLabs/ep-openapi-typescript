@@ -70,9 +70,8 @@ jobs:
           cd resources
           rm ep-openapi-spec.json
           curl https://openapi-v2.solace.cloud/api-docs-v2.json --output ./ep-openapi-spec.json
-          # ls -la
-          # exit 1
-          cat sep-openapi-spec.json
+          ls -la
+          cat ep-openapi-spec.json
           exit 1
 
       - name: "npm install"

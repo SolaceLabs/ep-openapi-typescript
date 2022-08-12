@@ -1,0 +1,22 @@
+{
+  "all": true,
+  "check-coverage": true,
+  "lines": 29,
+  "statements": 29,
+  "branches": 0,
+  "functions": 4,
+  "temp-dir": "./test/logs/nyc_output",
+  "reporter": [
+    "html",
+    "text",
+    "text-summary",
+    "lcov"
+  ],
+  "report-dir": "./test/logs/coverage",
+  "include": [
+    "generated/@solace-labs/ep-openapi-node/**/*.ts"
+  ],
+  "exclude": [
+    "test"
+  ]
+}

@@ -1,4 +1,5 @@
 dist
+dist-generated
 node_modules
 generated
 .DS_Store

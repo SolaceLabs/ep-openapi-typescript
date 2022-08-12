@@ -3,7 +3,7 @@
 # Copyright (c) 2022, Solace Corporation, Ricardo Gomez-Ulmke (ricardo.gomez-ulmke@solace.com)
 # ---------------------------------------------------------------------------------------------
 
-name: api-test-latest
+name: api-test-latest-compile
 on:
   workflow_dispatch:
   schedule:
@@ -16,7 +16,7 @@ env:
   EP_OPENAPI_TEST_LOGS_DIR: "ep-openapi/test/logs"
   EP_OPENAPI_TEST_LOGS_OUTPUT_NAME: "ep-openapi-test-logs"
 jobs:
-  api_test_latest:
+  api_test_latest_compile:
     runs-on: ubuntu-20.04
     strategy:
       max-parallel: 1
@@ -78,11 +78,10 @@ jobs:
           cd "${EP_OPENAPI_DIR}"
           npm run build
 
-      - name: "test"
+      - name: "compile"
         run: |
           cd "${EP_OPENAPI_DIR}"
-          export EP_OPENAPI_TEST_SOLACE_CLOUD_TOKEN="${{ secrets.EP_OPENAPI_TEST_SOLACE_CLOUD_TOKEN }}"
-          test/run.sh
+          npm run compile:spec
 
       - name: Archive Test Logs
         if: ${{ (failure() && !cancelled()) || (always() && (github.event_name=='workflow_dispatch' || env.DEBUG_FLAG=='true') ) }}

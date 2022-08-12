@@ -5,6 +5,7 @@
   "scripts": {
     "build": "tsc && ts-node build.ts",
     "compile": "tsc",
+    "compile:spec": "tsc --project tsconfig.compile-spec.json",
     "test": ". ./test/source.env.sh && mocha --config test/.mocharc.yml test/**/**.spec.ts && unset_source_env",
     "test:pretty": ". ./test/source.env.sh && mocha --config test/.mocharc.yml test/**/**.*.spec.ts | pino-pretty && unset_source_env"
   },

@@ -3,33 +3,34 @@
   "compilerOptions": {
     "target":"es2021",
     "module": "commonjs",
-    "lib": ["es2021", "dom"],
+    "lib": ["es2021", "dom" ],
+    "esModuleInterop": true,
+    "moduleResolution": "node",
     "declaration": true,
     "strict": false,
     "noImplicitAny": false,
-    "esModuleInterop": true,
-    "moduleResolution": "node",
-    "strictNullChecks": false,
+    "strictNullChecks": true,
     "noImplicitThis": true,
-    "alwaysStrict": true,
+    "alwaysStrict": false,
     "noUnusedLocals": false,
     "noUnusedParameters": true,
-    "noImplicitReturns": false,
+    "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": false,
     "skipLibCheck": true,
     "sourceMap": true,
     "strictPropertyInitialization":false,
     "resolveJsonModule": true,
-    "outDir": "dist",
-    "allowSyntheticDefaultImports": true,
+    "outDir": "./dist-generated",
     "typeRoots": [
-      "../node_modules/@types",
-      "../server/@types"
+      "./node_modules/@types"
     ]
   },
   "include": [
-    "./**/*.spec.ts",
-    "../generated/**/*.ts"
+    "generated/**/*.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules",
+    "_todo",
+    "**/_todo.*"
+  ]
 }

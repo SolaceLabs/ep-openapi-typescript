@@ -68,7 +68,7 @@ jobs:
         run: |
           cd "${EP_OPENAPI_DIR}"
           cd resources
-          curl https://openapi-v2.solace.cloud/api-docs-v2.json --output ./sep-openapi-spec.json
+          curl https://openapi-v2.solace.cloud/api-docs-v2.json --output ./ep-openapi-spec.json
           ls -la
           exit 1
           cat sep-openapi-spec.json

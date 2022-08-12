@@ -5,8 +5,8 @@
 
 ```bash
 cd resources
-curl https://openapi-v2.solace.cloud/api-docs-v2.json --output ./sep-openapi-spec.{version}.json
-ln -s sep-openapi-spec.{version}.json sep-openapi-spec.json
+curl https://openapi-v2.solace.cloud/api-docs-v2.json --output ./ep-openapi-spec.{version}.json
+ln -s ep-openapi-spec.{version}.json ep-openapi-spec.json
 ```
 
 ## Build

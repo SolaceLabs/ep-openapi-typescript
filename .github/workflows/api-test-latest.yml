@@ -5,12 +5,7 @@
 
 name: api-test-latest
 on:
-  # for testing
   workflow_dispatch:
-  # push:
-  #   branches:
-  #     - main
-  # production
   schedule:
   # #   # - cron: '0 4 * * MON'
     - cron: '0 4 * * *'

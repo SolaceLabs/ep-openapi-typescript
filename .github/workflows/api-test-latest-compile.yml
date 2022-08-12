@@ -83,13 +83,5 @@ jobs:
           cd "${EP_OPENAPI_DIR}"
           npm run compile:spec
 
-      - name: Archive Test Logs
-        if: ${{ (failure() && !cancelled()) || (always() && (github.event_name=='workflow_dispatch' || env.DEBUG_FLAG=='true') ) }}
-        uses: actions/upload-artifact@v2
-        with:
-          name: ${{ env.EP_OPENAPI_TEST_LOGS_OUTPUT_NAME }}
-          path: ${{ github.workspace }}/${{ env.EP_OPENAPI_TEST_LOGS_DIR }}
-          if-no-files-found: error
-
 ###
 # The End.

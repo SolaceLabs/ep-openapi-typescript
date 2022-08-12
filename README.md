@@ -1,4 +1,5 @@
 [![api-test](https://github.com/SolaceLabs/ep-openapi-typescript/actions/workflows/api-test.yml/badge.svg)](https://github.com/SolaceLabs/ep-openapi-typescript/actions/workflows/api-test.yml)
+[![api-test-latest](https://github.com/SolaceLabs/ep-openapi-typescript/actions/workflows/api-test-latest.yml/badge.svg)](https://github.com/SolaceLabs/ep-openapi-typescript/actions/workflows/api-test-latest.yml)
 
 # Solace Event Portal Open Api Generator
 

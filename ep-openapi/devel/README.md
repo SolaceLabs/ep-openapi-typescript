@@ -14,6 +14,7 @@ ln -s ep-openapi-spec.{version}.json ep-openapi-spec.json
 ```bash
 npm install
 npm run build
+npm run compile:spec
 ```
 
 ## Run Tests

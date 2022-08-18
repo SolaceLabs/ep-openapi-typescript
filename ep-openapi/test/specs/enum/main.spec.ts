@@ -83,6 +83,7 @@ describe(`${scriptName}`, () => {
         const enumVersionResponse: EnumVersionResponse = await EnumsService.createEnumVersionForEnum({
           enumId: EnumId,
           requestBody: {
+            enumId: EnumId,
             displayName: EnumVersionName,
             version: '1.0.0',
             values: EnumValues

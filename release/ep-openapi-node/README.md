@@ -35,7 +35,7 @@ export type OpenAPIConfig = {
 ```typescript
 
 const getBase = async(): Promise<string> => {
-  // decide you base ...
+  // set your base ...
   const myBase = ..., or
   const myBase = await ...
   return myBase;
@@ -43,8 +43,6 @@ const getBase = async(): Promise<string> => {
 
 // make use of it
 OpenAPI.BASE = async() => { return await getBase(); }
-
-
 
 ```
 

@@ -10,12 +10,13 @@ import {
   ApiError, 
   ApplicationDomainResponse, 
   ApplicationDomainsService, 
-  EnumResponse, 
-  EnumsService, 
-  EnumValue, 
-  EnumVersion, 
-  EnumVersionResponse,
-  EnumVersionsResponse
+  EnumsService,
+  TopicAddressEnum,
+  TopicAddressEnumResponse,
+  TopicAddressEnumValue,
+  TopicAddressEnumVersion,
+  TopicAddressEnumVersionResponse,
+  TopicAddressEnumVersionsResponse, 
 } from '../../../generated/@solace-labs/ep-openapi-node';
 
 const scriptName: string = path.basename(__filename);
@@ -24,11 +25,11 @@ TestLogger.logMessage(scriptName, ">>> starting ...");
 
 const ApplicationDomainName = `${TestConfig.getAppId()}/ep-openapi/${TestUtils.getUUID()}`;
 let ApplicationDomainId: string;
-const EnumName = `${TestConfig.getAppId()}/ep-openapi/${TestUtils.getUUID()}`;
+const EnumName = `enum-${TestUtils.getUUID()}`;
 let EnumId: string;
 
 const EnumVersionNameBase = TestUtils.getUUID();
-const EnumValues: Array<EnumValue> = [
+const topicAddressEnumValueList: Array<TopicAddressEnumValue> = [
   { label: 'one', value: 'one' },
   { label: 'two', value: 'two' }
 ];
@@ -78,14 +79,18 @@ describe(`${scriptName}`, () => {
 
     it(`${scriptName}: should create enum`, async () => {
       try {
-        const enumResponse: EnumResponse = await EnumsService.createEnum({
-          requestBody: {
-            applicationDomainId: ApplicationDomainId,
-            name: EnumName
-          }
+
+        const topicAddressEnumResponse: TopicAddressEnumResponse = await EnumsService.createEnum({
+            requestBody: {
+              applicationDomainId: ApplicationDomainId,
+              name: EnumName,
+              shared: false
+            }
         });
-        expect(enumResponse.data.id, TestLogger.createApiTestFailMessage('failed')).to.not.be.undefined;
-        EnumId = enumResponse.data.id;
+        const data: TopicAddressEnum | undefined = topicAddressEnumResponse.data;
+        expect(data, TestLogger.createApiTestFailMessage('failed')).to.not.be.undefined;
+        expect(data.id, TestLogger.createApiTestFailMessage('failed')).to.not.be.undefined;
+        EnumId = data.id;
       } catch(e) {
         expect(e instanceof ApiError, TestLogger.createNotApiErrorMesssage(e.message)).to.be.true;
         expect(false, TestLogger.createApiTestFailMessage('failed')).to.be.true;
@@ -97,16 +102,18 @@ describe(`${scriptName}`, () => {
         for(let i=0; i<EnumVersionQuantity; i++) {
           const enumVersionName = generateEnumVersionName(i);
           const enumVersionString = generateEnumVersionString(i);
-          const enumVersionResponse: EnumVersionResponse = await EnumsService.createEnumVersionForEnum({
+          const requestBody: TopicAddressEnumVersion = {
             enumId: EnumId,
-            requestBody: {
-              displayName: enumVersionName,
-              version: enumVersionString,
-              values: EnumValues
-            }
+            version: enumVersionString,
+            displayName: 'displayName',
+            values: topicAddressEnumValueList
+          };
+          const topicAddressEnumVersionResponse: TopicAddressEnumVersionResponse = await EnumsService.createEnumVersionForEnum({
+            enumId: EnumId,
+            requestBody: requestBody,
           });
-          expect(enumVersionResponse.data.id, TestLogger.createApiTestFailMessage('failed')).to.not.be.undefined;
-          expect(enumVersionResponse.data.version, TestLogger.createApiTestFailMessage('failed')).to.eq(enumVersionString);
+          expect(topicAddressEnumVersionResponse.data.id, TestLogger.createApiTestFailMessage('failed')).to.not.be.undefined;
+          expect(topicAddressEnumVersionResponse.data.version, TestLogger.createApiTestFailMessage('failed')).to.eq(enumVersionString);
           // EnumVersionId = enumVersionResponse.data.id;    
         }
       } catch(e) {
@@ -118,21 +125,21 @@ describe(`${scriptName}`, () => {
     it(`${scriptName}: should get all enum versions with paging`, async () => {
       const PageSize = 2;
       try {
-        const enumVersionList: Array<EnumVersion> = [];
+        const topicAddressEnumVersionList: Array<TopicAddressEnumVersion> = [];
         let nextPage: number | null = 1;
         while(nextPage !== null) {
 
-          const enumVersionsResponse: EnumVersionsResponse = await EnumsService.getEnumVersionsForEnum({
+          const topicAddressEnumVersionsResponse: TopicAddressEnumVersionsResponse = await EnumsService.getEnumVersionsForEnum({
             enumId: EnumId,
             pageSize: PageSize,
             pageNumber: nextPage
           });
-          if(enumVersionsResponse.data === undefined) throw new Error('enumVersionsResponse.data === undefined');
-          enumVersionList.push(...enumVersionsResponse.data);
-          if(PageSize <= EnumVersionQuantity) expect(enumVersionsResponse.data.length, TestLogger.createApiTestFailMessage('failed')).to.eq(PageSize);
-          else expect(enumVersionsResponse.data.length, TestLogger.createApiTestFailMessage('failed')).to.eq(EnumVersionQuantity);
-          if(enumVersionsResponse.meta === undefined) throw new Error('enumVersionsResponse.meta === undefined');
-          const meta: T_EpMeta = enumVersionsResponse.meta as T_EpMeta;
+          expect(topicAddressEnumVersionsResponse.data, TestLogger.createApiTestFailMessage('failed')).to.not.be.undefined;
+          topicAddressEnumVersionList.push(...topicAddressEnumVersionsResponse.data);
+          if(PageSize <= EnumVersionQuantity) expect(topicAddressEnumVersionsResponse.data.length, TestLogger.createApiTestFailMessage('failed')).to.eq(PageSize);
+          else expect(topicAddressEnumVersionsResponse.data.length, TestLogger.createApiTestFailMessage('failed')).to.eq(EnumVersionQuantity);
+          if(topicAddressEnumVersionsResponse.meta === undefined) throw new Error('enumVersionsResponse.meta === undefined');
+          const meta: T_EpMeta = topicAddressEnumVersionsResponse.meta as T_EpMeta;
           console.log(`meta=${JSON.stringify(meta, null, 2)}`);
           TestEpApiHelpers.validateMeta(meta);
           expect(meta.pagination.count, TestLogger.createApiTestFailMessage('failed')).to.eq(EnumVersionQuantity);
@@ -140,7 +147,7 @@ describe(`${scriptName}`, () => {
           nextPage = meta.pagination.nextPage;
         }
 
-        expect(enumVersionList.length, 'failed').to.eq(EnumVersionQuantity);
+        expect(topicAddressEnumVersionList.length, 'failed').to.eq(EnumVersionQuantity);
         
         // DEBUG
         // expect(false, 'check meta response').to.be.true;

@@ -66,6 +66,7 @@ jobs:
           rm ep-openapi-spec.json
           curl https://openapi-v2.solace.cloud/api-docs-v2.json --output ./ep-openapi-spec.json
           ls -la
+          echo "Version:"
           cat ep-openapi-spec.json | grep -E -o ".{0,100}\"version\": \".{0,100}"
 
       - name: "npm install"

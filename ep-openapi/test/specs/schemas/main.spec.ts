@@ -9,12 +9,11 @@ import {
   ApiError, 
   ApplicationDomainResponse, 
   ApplicationDomainsService, 
-  EnumsService,
-  TopicAddressEnum,
-  TopicAddressEnumResponse,
-  TopicAddressEnumValue,
-  TopicAddressEnumVersion,
-  TopicAddressEnumVersionResponse, 
+  SchemaObject,
+  SchemaResponse,
+  SchemasService,
+  SchemaVersion,
+  SchemaVersionResponse,
 } from '../../../generated/@solace-labs/ep-openapi-node';
 
 const scriptName: string = path.basename(__filename);
@@ -23,10 +22,10 @@ TestLogger.logMessage(scriptName, ">>> starting ...");
 
 const ApplicationDomainName = `${TestConfig.getAppId()}/ep-openapi/${TestUtils.getUUID()}`;
 let ApplicationDomainId: string;
-const EnumName = `enum-${TestUtils.getUUID()}`;
-let EnumId: string;
-const EnumVersionName = `${TestUtils.getUUID()}`;
-let EnumVersionId: string;
+const SchemaName = `schema-${TestUtils.getUUID()}`;
+let SchemaId: string;
+const SchemaVersionName = `${TestUtils.getUUID()}`;
+let SchemaVersionId: string;
 
 describe(`${scriptName}`, () => {
     
@@ -60,46 +59,42 @@ describe(`${scriptName}`, () => {
       }
     });
 
-    it(`${scriptName}: should create enum`, async () => {
+    it(`${scriptName}: should create schema`, async () => {
       try {
 
-        const topicAddressEnumResponse: TopicAddressEnumResponse = await EnumsService.createEnum({
-            requestBody: {
-              applicationDomainId: ApplicationDomainId,
-              name: EnumName,
-              shared: false
-            }
+        const schemaResponse: SchemaResponse = await SchemasService.createSchema({
+          requestBody: {
+            applicationDomainId: ApplicationDomainId,
+            contentType: 'json',
+            name: SchemaName,
+            schemaType: 'jsonSchema',
+            shared: false
+          }
         });
-        const data: TopicAddressEnum | undefined = topicAddressEnumResponse.data;
+        const data: SchemaObject | undefined = schemaResponse.data;
         expect(data, TestLogger.createApiTestFailMessage('failed')).to.not.be.undefined;
         expect(data.id, TestLogger.createApiTestFailMessage('failed')).to.not.be.undefined;
-        EnumId = data.id;
+        SchemaId = data.id;
       } catch(e) {
         expect(e instanceof ApiError, TestLogger.createNotApiErrorMesssage(e.message)).to.be.true;
         expect(false, TestLogger.createApiTestFailMessage('failed')).to.be.true;
       }
     });
 
-    it(`${scriptName}: should create enum version`, async () => {
+    it(`${scriptName}: should create schema version`, async () => {
       try {
-        const values: Array<TopicAddressEnumValue> = [
-          { label: 'one', value: 'one' },
-          { label: 'two', value: 'two' }
-        ];
-        const requestBody: TopicAddressEnumVersion = {
-          enumId: EnumId,
+        const requestBody: SchemaVersion = {
+          schemaId: SchemaId,
           version: '1.0.0',
-          displayName: 'displayName',
-          values: values
         };
-        const topicAddressEnumVersionResponse: TopicAddressEnumVersionResponse = await EnumsService.createEnumVersionForEnum({
-          enumId: EnumId,
-          requestBody: requestBody,
+        const schemaVersionResponse: SchemaVersionResponse = await SchemasService.createSchemaVersionForSchema({
+          schemaId: SchemaId,
+          requestBody: requestBody
         });
-        const data: TopicAddressEnumVersion | undefined = topicAddressEnumVersionResponse.data;
+        const data: SchemaVersion | undefined = schemaVersionResponse.data;
         expect(data, TestLogger.createApiTestFailMessage('failed')).to.not.be.undefined;
         expect(data.id, TestLogger.createApiTestFailMessage('failed')).to.not.be.undefined;
-        EnumVersionId = data.id;
+        SchemaVersionId = data.id;
       } catch(e) {
         expect(e instanceof ApiError, TestLogger.createNotApiErrorMesssage(e.message)).to.be.true;
         expect(false, TestLogger.createApiTestFailMessage('failed')).to.be.true;

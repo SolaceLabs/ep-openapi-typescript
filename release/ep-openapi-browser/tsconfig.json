@@ -2,8 +2,8 @@
   "compileOnSave": false,
   "compilerOptions": {
     "outDir": "dist",
-    "target": "es2021",
-    "lib": ["es2021", "dom"],
+    "target": "ES6",
+    "lib": ["ES6", "dom"],
     "module": "commonjs",
     "esModuleInterop": true,
     "declaration": true,

@@ -9,12 +9,11 @@ import {
   ApiError, 
   ApplicationDomainResponse, 
   ApplicationDomainsService, 
-  EnumsService,
-  TopicAddressEnum,
-  TopicAddressEnumResponse,
-  TopicAddressEnumValue,
-  TopicAddressEnumVersion,
-  TopicAddressEnumVersionResponse, 
+  EventResponse, 
+  EventsService, 
+  Event as EpEvent,
+  EventVersion,
+  EventVersionResponse,
 } from '../../../generated/@solace-labs/ep-openapi-node';
 
 const scriptName: string = path.basename(__filename);
@@ -23,10 +22,11 @@ TestLogger.logMessage(scriptName, ">>> starting ...");
 
 const ApplicationDomainName = `${TestConfig.getAppId()}/ep-openapi/${TestUtils.getUUID()}`;
 let ApplicationDomainId: string;
-const EnumName = `enum-${TestUtils.getUUID()}`;
-let EnumId: string;
-const EnumVersionName = `${TestUtils.getUUID()}`;
-let EnumVersionId: string;
+
+const EventName = `event-${TestUtils.getUUID()}`;
+let EventId: string;
+const EventVersionName = `${TestUtils.getUUID()}`;
+let EventVersionId: string;
 
 describe(`${scriptName}`, () => {
     
@@ -60,46 +60,39 @@ describe(`${scriptName}`, () => {
       }
     });
 
-    it(`${scriptName}: should create enum`, async () => {
+    it(`${scriptName}: should create event`, async () => {
       try {
 
-        const topicAddressEnumResponse: TopicAddressEnumResponse = await EnumsService.createEnum({
-            requestBody: {
-              applicationDomainId: ApplicationDomainId,
-              name: EnumName,
-              shared: false
-            }
+        const eventResponse: EventResponse = await EventsService.createEvent({
+          requestBody: {
+            applicationDomainId: ApplicationDomainId,
+            name: EventName,
+          }
         });
-        const data: TopicAddressEnum | undefined = topicAddressEnumResponse.data;
+        const data: EpEvent | undefined = eventResponse.data;
         expect(data, TestLogger.createApiTestFailMessage('failed')).to.not.be.undefined;
         expect(data.id, TestLogger.createApiTestFailMessage('failed')).to.not.be.undefined;
-        EnumId = data.id;
+        EventId = data.id;
       } catch(e) {
         expect(e instanceof ApiError, TestLogger.createNotApiErrorMesssage(e.message)).to.be.true;
         expect(false, TestLogger.createApiTestFailMessage('failed')).to.be.true;
       }
     });
 
-    it(`${scriptName}: should create enum version`, async () => {
+    it(`${scriptName}: should create event version`, async () => {
       try {
-        const values: Array<TopicAddressEnumValue> = [
-          { label: 'one', value: 'one' },
-          { label: 'two', value: 'two' }
-        ];
-        const requestBody: TopicAddressEnumVersion = {
-          enumId: EnumId,
+        const requestBody: EventVersion = {
+          eventId: EventId,
           version: '1.0.0',
-          displayName: 'displayName',
-          values: values
         };
-        const topicAddressEnumVersionResponse: TopicAddressEnumVersionResponse = await EnumsService.createEnumVersionForEnum({
-          enumId: EnumId,
-          requestBody: requestBody,
+        const eventVersionResponse: EventVersionResponse = await EventsService.createEventVersionForEvent({
+          eventId: EventId,
+          requestBody: requestBody
         });
-        const data: TopicAddressEnumVersion | undefined = topicAddressEnumVersionResponse.data;
+        const data: EventVersion | undefined = eventVersionResponse.data;
         expect(data, TestLogger.createApiTestFailMessage('failed')).to.not.be.undefined;
         expect(data.id, TestLogger.createApiTestFailMessage('failed')).to.not.be.undefined;
-        EnumVersionId = data.id;
+        EventVersionId = data.id;
       } catch(e) {
         expect(e instanceof ApiError, TestLogger.createNotApiErrorMesssage(e.message)).to.be.true;
         expect(false, TestLogger.createApiTestFailMessage('failed')).to.be.true;

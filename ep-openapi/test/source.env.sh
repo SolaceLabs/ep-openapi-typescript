@@ -12,8 +12,6 @@ unset_source_env() {
     unset -f unset_source_env
 }
 
-export EP_OPENAPI_TEST_EP_API_BASE_URL="https://ian-dev-api.mymaas.net"
-
 ######################################################
 
 NOLOG_EP_OPENAPI_TEST_SOLACE_CLOUD_TOKEN=$EP_OPENAPI_TEST_SOLACE_CLOUD_TOKEN

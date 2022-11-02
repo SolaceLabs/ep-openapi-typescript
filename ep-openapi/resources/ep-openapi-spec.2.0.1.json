@@ -3,7 +3,7 @@
   "info": {
     "title": "Event Portal Open API",
     "description": "REST API Concepts\n\nSolace PubSub+ Event Portal provides REST APIs that you can use to manage your data in PubSub+ Cloud. \nThe REST APIs allow you to model your event-driven architectures from your own client applications.\n\nThe following document describes the public REST APIs available for use in Event Portal 2.0. Objects created in this \nversion will not be available in Event Portal 1.0. APIs that display (Beta) in their summary are provided as-is and \nare subject to change or removal. They may not be of the quality expected for generally available APIs and have no \nguaranteed forward compatibility with the generally available version of the API.\n\n",
-    "version": "2.0.1.001"
+    "version": "2.0.1"
   },
   "servers": [
     {
@@ -13,9 +13,7 @@
   ],
   "security": [
     {
-      "APIToken": [
-
-      ]
+      "APIToken": []
     }
   ],
   "tags": [
@@ -62,9 +60,7 @@
   "paths": {
     "/api/v2/architecture/enums": {
       "get": {
-        "tags": [
-          "Enums"
-        ],
+        "tags": ["Enums"],
         "summary": "Lists enums",
         "description": "Use this API to list enums based on certain criteria.",
         "operationId": "getEnums",
@@ -285,9 +281,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Enums"
-        ],
+        "tags": ["Enums"],
         "summary": "Creates an enum object",
         "description": "description",
         "operationId": "createEnum",
@@ -420,9 +414,7 @@
     },
     "/api/v2/architecture/events": {
       "get": {
-        "tags": [
-          "Events"
-        ],
+        "tags": ["Events"],
         "summary": "Gets the event objects",
         "description": "Use this API to retrieve a list of events that match the given parameters.",
         "operationId": "getEvents",
@@ -640,9 +632,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Events"
-        ],
+        "tags": ["Events"],
         "summary": "Creates an event object",
         "description": "Events are the primary building block of an event-driven architecture. Applications publish and subscribe to events and events reference schemas.  In the Event Portal, an event is a type of event as opposed to a specific event instance.",
         "operationId": "createEvent",
@@ -775,9 +765,7 @@
     },
     "/api/v2/architecture/states": {
       "get": {
-        "tags": [
-          "States"
-        ],
+        "tags": ["States"],
         "summary": "Gets the State objects",
         "description": "Use this API to retrieve a list of Lifeycle States that match the given parameters.",
         "operationId": "getStates",
@@ -899,9 +887,7 @@
     },
     "/api/v2/architecture/schemas": {
       "get": {
-        "tags": [
-          "Schemas"
-        ],
+        "tags": ["Schemas"],
         "summary": "Gets the schema objects",
         "description": "Use this API to retrieve a list of schemas that match the given parameters.",
         "operationId": "getSchemas",
@@ -1119,9 +1105,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Schemas"
-        ],
+        "tags": ["Schemas"],
         "summary": "Creates a schema object",
         "description": "To model your event-driven architecture, schemas are a fundamental building block for modelling the payloads of the events flowing through your system. Use this API to create schemas that can later be referenced by events.",
         "operationId": "createSchema",
@@ -1254,9 +1238,7 @@
     },
     "/api/v2/architecture/eventApis": {
       "get": {
-        "tags": [
-          "Event APIs"
-        ],
+        "tags": ["Event APIs"],
         "summary": "Retrieves a list of event APIs",
         "description": "Use this API to retrieve a list of event APIs that match the given parameters.",
         "operationId": "getEventApis",
@@ -1506,9 +1488,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Event APIs"
-        ],
+        "tags": ["Event APIs"],
         "summary": "Creates an event API",
         "description": "Use this API to create an event API.",
         "operationId": "createEventApi",
@@ -1641,9 +1621,7 @@
     },
     "/api/v2/architecture/consumers": {
       "get": {
-        "tags": [
-          "Consumers"
-        ],
+        "tags": ["Consumers"],
         "summary": "Gets the consumer objects",
         "description": "Use this API to retrieve a list of consumers that match the given parameters.",
         "operationId": "getConsumers",
@@ -1816,9 +1794,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Consumers"
-        ],
+        "tags": ["Consumers"],
         "summary": "Creates a consumer object",
         "description": "Use this API to create a consumer. ",
         "operationId": "createConsumer",
@@ -1951,9 +1927,7 @@
     },
     "/api/v2/architecture/enums/{id}": {
       "get": {
-        "tags": [
-          "Enums"
-        ],
+        "tags": ["Enums"],
         "summary": "Retrieves an enum object",
         "description": "Use this API to retrieve a single enum by its ID.",
         "operationId": "getEnum",
@@ -2084,9 +2058,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Enums"
-        ],
+        "tags": ["Enums"],
         "summary": "Deletes an enum",
         "description": "Use this API to delete an enum. The enum must not have any versions or else it cannot be deleted.",
         "operationId": "deleteEnum",
@@ -2203,9 +2175,7 @@
         }
       },
       "patch": {
-        "tags": [
-          "Enums"
-        ],
+        "tags": ["Enums"],
         "summary": "Updates an enum object",
         "description": "description",
         "operationId": "updateEnum",
@@ -2349,9 +2319,7 @@
     },
     "/api/v2/architecture/eventMeshes": {
       "get": {
-        "tags": [
-          "Event Meshes"
-        ],
+        "tags": ["Event Meshes"],
         "summary": "Gets the event mesh objects",
         "description": "Use this API to retrieve a list of event meshes that match the given parameters.",
         "operationId": "getEventMeshes",
@@ -2516,9 +2484,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Event Meshes"
-        ],
+        "tags": ["Event Meshes"],
         "summary": "Creates an event mesh object",
         "description": "Creates an event mesh object.",
         "operationId": "createEventMesh",
@@ -2651,9 +2617,7 @@
     },
     "/api/v2/architecture/events/{id}": {
       "get": {
-        "tags": [
-          "Events"
-        ],
+        "tags": ["Events"],
         "summary": "Retrieves an event object",
         "description": "Use this API to retrieve a single event by its ID.",
         "operationId": "getEvent",
@@ -2784,9 +2748,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Events"
-        ],
+        "tags": ["Events"],
         "summary": "Deletes an event object",
         "description": "Use this API to delete an event.",
         "operationId": "deleteEvent",
@@ -2910,9 +2872,7 @@
         }
       },
       "patch": {
-        "tags": [
-          "Events"
-        ],
+        "tags": ["Events"],
         "summary": "Updates an event object",
         "description": "Use this API to update an event. You only need to specify the fields that need to be updated.",
         "operationId": "updateEvent",
@@ -3056,9 +3016,7 @@
     },
     "/api/v2/architecture/topicDomains": {
       "get": {
-        "tags": [
-          "Topic Domains"
-        ],
+        "tags": ["Topic Domains"],
         "summary": "Gets the topic domain objects",
         "description": "Use this API to retrieve a list of topic domains that match the given parameters.",
         "operationId": "getTopicDomains",
@@ -3248,9 +3206,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Topic Domains"
-        ],
+        "tags": ["Topic Domains"],
         "summary": "Creates a topic domain object",
         "description": "Topic Domains govern the format of topic addresses within an application domain",
         "operationId": "createTopicDomain",
@@ -3382,9 +3338,7 @@
     },
     "/api/v2/architecture/enumVersions": {
       "get": {
-        "tags": [
-          "Enums"
-        ],
+        "tags": ["Enums"],
         "summary": "Gets the enumeration version objects",
         "description": "Use this API to retrieve a list of enumeration versions that match the given parameters.",
         "operationId": "getEnumVersions",
@@ -3554,9 +3508,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Enums"
-        ],
+        "tags": ["Enums"],
         "summary": "Creates an enum version object",
         "description": "description",
         "operationId": "createEnumVersion",
@@ -3689,9 +3641,7 @@
     },
     "/api/v2/architecture/applications": {
       "get": {
-        "tags": [
-          "Applications"
-        ],
+        "tags": ["Applications"],
         "summary": "Gets the application objects",
         "description": "Use this API to retrieve a list of applications that match the given parameters.",
         "operationId": "getApplications",
@@ -3896,9 +3846,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Applications"
-        ],
+        "tags": ["Applications"],
         "summary": "Creates an application object",
         "description": "To model your event-driven architecture, applications are a fundamental building block for modelling the producers and consumers of events. Use this API to create applications and model the events they produce and consume.",
         "operationId": "createApplication",
@@ -4031,9 +3979,7 @@
     },
     "/api/v2/architecture/schemas/{id}": {
       "get": {
-        "tags": [
-          "Schemas"
-        ],
+        "tags": ["Schemas"],
         "summary": "Retrieves a schema object",
         "description": "Use this API to retrieve a single schema by its ID.",
         "operationId": "getSchema",
@@ -4164,9 +4110,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Schemas"
-        ],
+        "tags": ["Schemas"],
         "summary": "Deletes a schema object",
         "description": "Use this API to delete a schema. The schema must not be in use by any events else it cannot be deleted.",
         "operationId": "deleteSchema",
@@ -4290,9 +4234,7 @@
         }
       },
       "patch": {
-        "tags": [
-          "Schemas"
-        ],
+        "tags": ["Schemas"],
         "summary": "Updates a schema object",
         "description": "Update a schema",
         "operationId": "updateSchema",
@@ -4436,9 +4378,7 @@
     },
     "/api/v2/architecture/environments": {
       "get": {
-        "tags": [
-          "Environments"
-        ],
+        "tags": ["Environments"],
         "summary": "Gets the environment objects",
         "description": "Use this API to list all environments.",
         "operationId": "getEnvironments",
@@ -4603,9 +4543,7 @@
     },
     "/api/v2/architecture/eventVersions": {
       "get": {
-        "tags": [
-          "Events"
-        ],
+        "tags": ["Events"],
         "summary": "Gets event version objects",
         "description": "Use this API to retrieve a list of event versions that match the given parameters.",
         "operationId": "getEventVersions",
@@ -4775,9 +4713,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Events"
-        ],
+        "tags": ["Events"],
         "summary": "Creates an event version object",
         "description": "Creates an event version object",
         "operationId": "createEventVersion",
@@ -4910,9 +4846,7 @@
     },
     "/api/v2/architecture/schemaVersions": {
       "get": {
-        "tags": [
-          "Schemas"
-        ],
+        "tags": ["Schemas"],
         "summary": "Gets the schema version objects for a schema",
         "description": "Use this API to retrieve a list of schema versions that match the given parameters.",
         "operationId": "getSchemaVersions",
@@ -5090,9 +5024,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Schemas"
-        ],
+        "tags": ["Schemas"],
         "summary": "Creates a schema version object",
         "description": "Creates a schema version object",
         "operationId": "createSchemaVersion",
@@ -5225,9 +5157,7 @@
     },
     "/api/v2/architecture/eventApis/{id}": {
       "get": {
-        "tags": [
-          "Event APIs"
-        ],
+        "tags": ["Event APIs"],
         "summary": "Retrieves an event API",
         "description": "Use this API to retrieve a single event API by its ID.",
         "operationId": "getEventApi",
@@ -5358,9 +5288,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Event APIs"
-        ],
+        "tags": ["Event APIs"],
         "summary": "Deletes an event API",
         "description": "Use this API to delete an event API.",
         "operationId": "deleteEventApi",
@@ -5484,9 +5412,7 @@
         }
       },
       "patch": {
-        "tags": [
-          "Event APIs"
-        ],
+        "tags": ["Event APIs"],
         "summary": "Updates an event API",
         "description": "Use this API to update an event API. You only need to specify the fields that need to be updated.",
         "operationId": "updateEventApi",
@@ -5630,9 +5556,7 @@
     },
     "/api/v2/architecture/consumers/{id}": {
       "get": {
-        "tags": [
-          "Consumers"
-        ],
+        "tags": ["Consumers"],
         "summary": "Retrieves a consumer object",
         "description": "Use this API to retrieve a single consumer by its ID.",
         "operationId": "getConsumer",
@@ -5763,9 +5687,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Consumers"
-        ],
+        "tags": ["Consumers"],
         "summary": "Deletes a consumer object",
         "description": "Use this API to delete a consumer.",
         "operationId": "deleteConsumer",
@@ -5889,9 +5811,7 @@
         }
       },
       "patch": {
-        "tags": [
-          "Consumers"
-        ],
+        "tags": ["Consumers"],
         "summary": "Update a consumer object",
         "description": "Use this API to update a consumer. ",
         "operationId": "updateConsumer",
@@ -6035,9 +5955,7 @@
     },
     "/api/v2/architecture/eventApiVersions": {
       "get": {
-        "tags": [
-          "Event APIs"
-        ],
+        "tags": ["Event APIs"],
         "summary": "Retrieves a list of event API versions",
         "description": "Use this API to retrieve a list of event API versions that match the given parameters.",
         "operationId": "getEventApiVersions",
@@ -6226,9 +6144,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Event APIs"
-        ],
+        "tags": ["Event APIs"],
         "summary": "Creates an event API version",
         "description": "Use this API to create an event API version.",
         "operationId": "createEventApiVersion",
@@ -6361,9 +6277,7 @@
     },
     "/api/v2/architecture/eventApiProducts": {
       "get": {
-        "tags": [
-          "Event API Products"
-        ],
+        "tags": ["Event API Products"],
         "summary": "Retrieves a list of event API products",
         "description": "Use this API to retrieve a list of event API products that match the given parameters.",
         "operationId": "getEventApiProducts",
@@ -6591,9 +6505,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Event API Products"
-        ],
+        "tags": ["Event API Products"],
         "summary": "Creates an event API product",
         "description": "Use this API to create an event API product.",
         "operationId": "createEventApiProduct",
@@ -6726,9 +6638,7 @@
     },
     "/api/v2/architecture/eventMeshes/{id}": {
       "get": {
-        "tags": [
-          "Event Meshes"
-        ],
+        "tags": ["Event Meshes"],
         "summary": "Retrieves an event mesh object",
         "description": "Retrieves a single event mesh by its ID.",
         "operationId": "getEventMesh",
@@ -6859,9 +6769,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Event Meshes"
-        ],
+        "tags": ["Event Meshes"],
         "summary": "Deletes an event mesh object",
         "description": "Use this API to delete an event mesh.",
         "operationId": "deleteEventMesh",
@@ -6985,9 +6893,7 @@
         }
       },
       "patch": {
-        "tags": [
-          "Event Meshes"
-        ],
+        "tags": ["Event Meshes"],
         "summary": "Updates an event mesh object",
         "description": "Use this API to update an event mesh. You only need to specify the fields that need to be updated.",
         "operationId": "updateEventMesh",
@@ -7131,9 +7037,7 @@
     },
     "/api/v2/architecture/messagingServices": {
       "get": {
-        "tags": [
-          "Messaging Services"
-        ],
+        "tags": ["Messaging Services"],
         "summary": "(Beta) Retrieves a list of messaging services",
         "description": "Use this API to retrieve a list of messaging services that match the given parameters.",
         "operationId": "getMessagingServices",
@@ -7337,9 +7241,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Messaging Services"
-        ],
+        "tags": ["Messaging Services"],
         "summary": "(Beta) Creates a messaging service object",
         "description": "Use this API to create a messaging service object.",
         "operationId": "createMessagingService",
@@ -7472,9 +7374,7 @@
     },
     "/api/v2/architecture/enumVersions/{id}": {
       "delete": {
-        "tags": [
-          "Enums"
-        ],
+        "tags": ["Enums"],
         "summary": "Deletes an enum version",
         "description": "Use this API to delete an enum version. The version must not be in use by any events else it cannot be deleted. This also deletes the version's values.",
         "operationId": "deleteEnumVersion",
@@ -7591,9 +7491,7 @@
         }
       },
       "patch": {
-        "tags": [
-          "Enums"
-        ],
+        "tags": ["Enums"],
         "summary": "Updates an enum version object",
         "description": "Use this API to update an enum version. You only need to specify the fields that need to be updated.",
         "operationId": "updateEnumVersion",
@@ -7737,9 +7635,7 @@
     },
     "/api/v2/architecture/applications/{id}": {
       "get": {
-        "tags": [
-          "Applications"
-        ],
+        "tags": ["Applications"],
         "summary": "Retrieves an application object",
         "description": "Use this API to retrieve a single application by its ID.",
         "operationId": "getApplication",
@@ -7870,9 +7766,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Applications"
-        ],
+        "tags": ["Applications"],
         "summary": "Deletes an application object",
         "description": "Use this API to delete an application.",
         "operationId": "deleteApplication",
@@ -7996,9 +7890,7 @@
         }
       },
       "patch": {
-        "tags": [
-          "Applications"
-        ],
+        "tags": ["Applications"],
         "summary": "Updates an application object",
         "description": "Use this API to update an application. You only need to specify the fields that need to be updated.",
         "operationId": "updateApplication",
@@ -8142,9 +8034,7 @@
     },
     "/api/v2/architecture/topicDomains/{id}": {
       "get": {
-        "tags": [
-          "Topic Domains"
-        ],
+        "tags": ["Topic Domains"],
         "summary": "Retrieves a topic domain object",
         "description": "Use this API to retrieve a single topic domain by its ID.",
         "operationId": "getTopicDomain",
@@ -8275,9 +8165,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Topic Domains"
-        ],
+        "tags": ["Topic Domains"],
         "summary": "Deletes a topic domain object",
         "description": "Use this API to delete a topic domain.",
         "operationId": "deleteTopicDomain",
@@ -8410,9 +8298,7 @@
     },
     "/api/v2/architecture/environments/{id}": {
       "get": {
-        "tags": [
-          "Environments"
-        ],
+        "tags": ["Environments"],
         "summary": "Retrieves an environment object",
         "description": "Use this API to retrieve a single environment by its ID.",
         "operationId": "getEnvironment",
@@ -8545,9 +8431,7 @@
     },
     "/api/v2/architecture/applicationDomains": {
       "get": {
-        "tags": [
-          "Application Domains"
-        ],
+        "tags": ["Application Domains"],
         "summary": "Gets the application domain objects",
         "description": "Use this API to retrieve a list of application domains that match the given parameters.",
         "operationId": "getApplicationDomains",
@@ -8729,9 +8613,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Application Domains"
-        ],
+        "tags": ["Application Domains"],
         "summary": "Creates an application domain object",
         "description": "To help keep your event-driven architecture organized, use application domains to create namespaces for your applications, events and schemas.",
         "operationId": "createApplicationDomain",
@@ -8864,9 +8746,7 @@
     },
     "/api/v2/architecture/eventVersions/{id}": {
       "get": {
-        "tags": [
-          "Events"
-        ],
+        "tags": ["Events"],
         "summary": "Retrieves an event version object",
         "description": "Use this API to retrieve a single event version by its ID.",
         "operationId": "getEventVersion",
@@ -8997,9 +8877,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Events"
-        ],
+        "tags": ["Events"],
         "summary": "Deletes an event version object",
         "description": "Use this API to delete an event version.",
         "operationId": "deleteEventVersion",
@@ -9123,9 +9001,7 @@
         }
       },
       "patch": {
-        "tags": [
-          "Events"
-        ],
+        "tags": ["Events"],
         "summary": "Updates an event version object",
         "description": "Use this API to update an event version. You only need to specify the fields that need to be updated.",
         "operationId": "updateEventVersion",
@@ -9269,9 +9145,7 @@
     },
     "/api/v2/architecture/applicationVersions": {
       "get": {
-        "tags": [
-          "Applications"
-        ],
+        "tags": ["Applications"],
         "summary": "Gets the application version objects",
         "description": "Use this API to retrieve a list of application versions that match the given parameters.",
         "operationId": "getApplicationVersions",
@@ -9441,9 +9315,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Applications"
-        ],
+        "tags": ["Applications"],
         "summary": "Creates an application version object",
         "description": "Creates an application version object",
         "operationId": "createApplicationVersion",
@@ -9576,9 +9448,7 @@
     },
     "/api/v2/architecture/schemaVersions/{id}": {
       "delete": {
-        "tags": [
-          "Schemas"
-        ],
+        "tags": ["Schemas"],
         "summary": "Deletes a schema version object",
         "description": "Use this API to delete a schema version.",
         "operationId": "deleteSchemaVersion",
@@ -9702,9 +9572,7 @@
         }
       },
       "patch": {
-        "tags": [
-          "Schemas"
-        ],
+        "tags": ["Schemas"],
         "summary": "Updates a schema version object",
         "description": "Use this API to update a schema version.",
         "operationId": "updateSchemaVersion",
@@ -9847,9 +9715,7 @@
     },
     "/api/v2/architecture/eventManagementAgents": {
       "get": {
-        "tags": [
-          "Event Management Agents"
-        ],
+        "tags": ["Event Management Agents"],
         "summary": "(Beta) Retrieves a list of EMAs",
         "description": "Use this API to retrieve a list of EMAs that match the given parameters.",
         "operationId": "getEventManagementAgents",
@@ -10045,9 +9911,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Event Management Agents"
-        ],
+        "tags": ["Event Management Agents"],
         "summary": "(Beta) Creates an EMA object",
         "description": "Use this API to create an EMA object.",
         "operationId": "createEventManagementAgent",
@@ -10180,9 +10044,7 @@
     },
     "/api/v2/architecture/eventApiProducts/{id}": {
       "get": {
-        "tags": [
-          "Event API Products"
-        ],
+        "tags": ["Event API Products"],
         "summary": "Retrieves an event API product",
         "description": "Use this API to retrieve a single event API product by its ID.",
         "operationId": "getEventApiProduct",
@@ -10313,9 +10175,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Event API Products"
-        ],
+        "tags": ["Event API Products"],
         "summary": "Deletes an event API product",
         "description": "Use this API to delete an event API product.",
         "operationId": "deleteEventApiProduct",
@@ -10439,9 +10299,7 @@
         }
       },
       "patch": {
-        "tags": [
-          "Event API Products"
-        ],
+        "tags": ["Event API Products"],
         "summary": "Updates an event API product",
         "description": "Use this API to update an event API product. You only need to specify the fields that need to be updated.",
         "operationId": "updateEventApiProduct",
@@ -10585,9 +10443,7 @@
     },
     "/api/v2/architecture/messagingServiceScans": {
       "get": {
-        "tags": [
-          "Messaging Service Scans"
-        ],
+        "tags": ["Messaging Service Scans"],
         "summary": "(Beta) Retrieves a list of messaging service scans",
         "description": "Use this API to retrieve a list of messaging service scans that match the given parameters.",
         "operationId": "getMessagingServiceScans",
@@ -10776,9 +10632,7 @@
     },
     "/api/v2/architecture/messagingServices/{id}": {
       "get": {
-        "tags": [
-          "Messaging Services"
-        ],
+        "tags": ["Messaging Services"],
         "summary": "(Beta) Retrieves a messaging service object",
         "description": "Use this API to retrieve a single messaging service by its ID.",
         "operationId": "getMessagingService",
@@ -10909,9 +10763,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Messaging Services"
-        ],
+        "tags": ["Messaging Services"],
         "summary": "(Beta) Deletes a messaging service object",
         "description": "Use this API to delete a messaging service.",
         "operationId": "deleteMessagingService",
@@ -11035,9 +10887,7 @@
         }
       },
       "patch": {
-        "tags": [
-          "Messaging Services"
-        ],
+        "tags": ["Messaging Services"],
         "summary": "(Beta) Updates a messaging service object",
         "description": "Use this API to update a messaging service. You only need to specify the fields that need to be updated. However, if you want to update anything under subObjects (i.e. anything inside messagingServiceConnections object), you need to provide the original messagingServiceConnections with the updated fields instead of just providing the changed fields.",
         "operationId": "updateMessagingService",
@@ -11181,9 +11031,7 @@
     },
     "/api/v2/architecture/eventApiProductVersions": {
       "get": {
-        "tags": [
-          "Event API Products"
-        ],
+        "tags": ["Event API Products"],
         "summary": "(Beta) Retrieves a list of event API product versions",
         "description": "Use this API to retrieve a list of event API product versions that match the given parameters.",
         "operationId": "getEventApiProductVersions",
@@ -11381,9 +11229,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Event API Products"
-        ],
+        "tags": ["Event API Products"],
         "summary": "(Beta) Creates an event API product version",
         "description": "Use this API to create an event API product version.",
         "operationId": "createEventApiProductVersion",
@@ -11516,9 +11362,7 @@
     },
     "/api/v2/architecture/enums/{enumId}/versions": {
       "get": {
-        "tags": [
-          "Enums"
-        ],
+        "tags": ["Enums"],
         "summary": "Lists enums",
         "description": "Use this API to list enum versions based on certain criteria.",
         "operationId": "getEnumVersionsForEnum",
@@ -11718,9 +11562,7 @@
         "deprecated": true
       },
       "post": {
-        "tags": [
-          "Enums"
-        ],
+        "tags": ["Enums"],
         "summary": "Creates an enum version object",
         "description": "description",
         "operationId": "createEnumVersionForEnum",
@@ -11864,9 +11706,7 @@
     },
     "/api/v2/architecture/enumVersions/{id}/state": {
       "patch": {
-        "tags": [
-          "Enums"
-        ],
+        "tags": ["Enums"],
         "summary": "Updates the state of an enum version object",
         "description": "Use this API to update the state of an enum version. You only need to specify the target stateId field.",
         "operationId": "updateEnumVersionState",
@@ -12010,9 +11850,7 @@
     },
     "/api/v2/architecture/applicationDomains/{id}": {
       "get": {
-        "tags": [
-          "Application Domains"
-        ],
+        "tags": ["Application Domains"],
         "summary": "Retrieves an application domain object",
         "description": "Use this API to retrieve a single application domain by its ID.",
         "operationId": "getApplicationDomain",
@@ -12156,9 +11994,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Application Domains"
-        ],
+        "tags": ["Application Domains"],
         "summary": "Deletes an application domain object",
         "description": "Use this API to delete an application domain. This action also deletes all applications, events, and schemas in the application domain. You cannot undo this operation.",
         "operationId": "deleteApplicationDomain",
@@ -12282,9 +12118,7 @@
         }
       },
       "patch": {
-        "tags": [
-          "Application Domains"
-        ],
+        "tags": ["Application Domains"],
         "summary": "Updates an application domain object",
         "description": "Use this API to update an application domain. You only need to specify the fields that need to be updated.",
         "operationId": "updateApplicationDomain",
@@ -12426,14 +12260,10 @@
         }
       }
     },
-    "/api/v2/architecture/applicationRegistrations": {
-
-    },
+    "/api/v2/architecture/applicationRegistrations": {},
     "/api/v2/architecture/eventVersions/{id}/state": {
       "patch": {
-        "tags": [
-          "Events"
-        ],
+        "tags": ["Events"],
         "summary": "Updates the state of an event version object",
         "description": "Use this API to update the state of event version. You only need to specify the target stateId field",
         "operationId": "updateEventVersionState",
@@ -12577,9 +12407,7 @@
     },
     "/api/v2/architecture/enumVersions/{versionId}": {
       "get": {
-        "tags": [
-          "Enums"
-        ],
+        "tags": ["Enums"],
         "summary": "Retrieves an enumeration version object",
         "description": "Use this API to retrieve a single enumeration version by its ID.",
         "operationId": "getEnumVersion",
@@ -12712,9 +12540,7 @@
     },
     "/api/v2/architecture/events/{eventId}/versions": {
       "get": {
-        "tags": [
-          "Events"
-        ],
+        "tags": ["Events"],
         "summary": "Gets the event version objects for an event",
         "description": "Use this API to retrieve a list of event versions that match the given parameters.",
         "operationId": "getEventVersionsForEvent",
@@ -12887,9 +12713,7 @@
         "deprecated": true
       },
       "post": {
-        "tags": [
-          "Events"
-        ],
+        "tags": ["Events"],
         "summary": "Creates an event version object",
         "description": "Creates an event version object",
         "operationId": "createEventVersionForEvent",
@@ -13034,9 +12858,7 @@
     },
     "/api/v2/architecture/applicationDomains/import": {
       "post": {
-        "tags": [
-          "Application Domains"
-        ],
+        "tags": ["Application Domains"],
         "summary": "(Beta) Import application domains and their entities",
         "description": "Use this API to import application domains and their nested entities. Please note that this endpoint is in beta and could be subject to change in the future",
         "operationId": "importApplicationDomains",
@@ -13162,9 +12984,7 @@
     },
     "/api/v2/architecture/schemaVersions/{id}/state": {
       "patch": {
-        "tags": [
-          "Schemas"
-        ],
+        "tags": ["Schemas"],
         "summary": "Updates the state of a schema version object",
         "description": "Use this API to update the state of a schema version.",
         "operationId": "updateSchemaVersionState",
@@ -13308,9 +13128,7 @@
     },
     "/api/v2/architecture/customAttributeDefinitions": {
       "get": {
-        "tags": [
-          "Custom Attribute Definitions"
-        ],
+        "tags": ["Custom Attribute Definitions"],
         "summary": "Gets the custom attribute definition objects",
         "description": "Use this API to retrieve a list of custom attributes that match the given parameters.",
         "operationId": "getCustomAttributeDefinitions",
@@ -13470,9 +13288,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Custom Attribute Definitions"
-        ],
+        "tags": ["Custom Attribute Definitions"],
         "summary": "Creates a custom attribute definition object",
         "description": "Use this API to create a custom attribute definition.",
         "operationId": "createCustomAttributeDefinition",
@@ -13605,9 +13421,7 @@
     },
     "/api/v2/architecture/eventManagementAgents/{id}": {
       "get": {
-        "tags": [
-          "Event Management Agents"
-        ],
+        "tags": ["Event Management Agents"],
         "summary": "(Beta) Retrieves an EMA object",
         "description": "Use this API to retrieve a single EMA by its ID.",
         "operationId": "getEventManagementAgent",
@@ -13747,9 +13561,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Event Management Agents"
-        ],
+        "tags": ["Event Management Agents"],
         "summary": "(Beta) Deletes an EMA object",
         "description": "Use this API to delete an EMA.",
         "operationId": "deleteEventManagementAgent",
@@ -13873,9 +13685,7 @@
         }
       },
       "patch": {
-        "tags": [
-          "Event Management Agents"
-        ],
+        "tags": ["Event Management Agents"],
         "summary": "(Beta) Updates an EMA object",
         "description": "Use this API to update an EMA. You only need to specify the fields that need to be updated.",
         "operationId": "updateEventManagementAgent",
@@ -14019,9 +13829,7 @@
     },
     "/api/v2/architecture/schemaVersions/{versionId}": {
       "get": {
-        "tags": [
-          "Schemas"
-        ],
+        "tags": ["Schemas"],
         "summary": "Retrieves a schema version object",
         "description": "Use this API to retrieve a single schema version by its ID.",
         "operationId": "getSchemaVersion",
@@ -14154,9 +13962,7 @@
     },
     "/api/v2/architecture/messagingServiceScans/{id}": {
       "get": {
-        "tags": [
-          "Messaging Service Scans"
-        ],
+        "tags": ["Messaging Service Scans"],
         "summary": "(Beta) Retrieves a messaging service scan object",
         "description": "Use this API to retrieve a single messaging service scan by its ID.",
         "operationId": "getMessagingServiceScan",
@@ -14287,9 +14093,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Messaging Service Scans"
-        ],
+        "tags": ["Messaging Service Scans"],
         "summary": "(Beta) Deletes a messaging service scan object",
         "description": "Use this API to delete a messaging service scan.",
         "operationId": "deleteMessagingServiceScan",
@@ -14415,9 +14219,7 @@
     },
     "/api/v2/architecture/schemas/{schemaId}/versions": {
       "get": {
-        "tags": [
-          "Schemas"
-        ],
+        "tags": ["Schemas"],
         "summary": "Gets the schema version objects for a schema",
         "description": "Use this API to retrieve a list of schema versions that match the given parameters.",
         "operationId": "getSchemaVersionsForSchema",
@@ -14616,9 +14418,7 @@
         "deprecated": true
       },
       "post": {
-        "tags": [
-          "Schemas"
-        ],
+        "tags": ["Schemas"],
         "summary": "Creates a schema version object",
         "description": "Creates a schema version object",
         "operationId": "createSchemaVersionForSchema",
@@ -14763,9 +14563,7 @@
     },
     "/api/v2/architecture/eventManagementAgentRegions": {
       "get": {
-        "tags": [
-          "Event Management Agent Regions"
-        ],
+        "tags": ["Event Management Agent Regions"],
         "summary": "(Beta) Retrieves a list of event management agent regions.",
         "description": "Use this API to retrieve a list of event management agent regions.",
         "operationId": "getEventManagementAgentRegions",
@@ -14909,14 +14707,10 @@
         }
       }
     },
-    "/api/v2/architecture/eventApiProductRegistrations": {
-
-    },
+    "/api/v2/architecture/eventApiProductRegistrations": {},
     "/api/v2/architecture/eventApiVersions/{versionId}": {
       "get": {
-        "tags": [
-          "Event APIs"
-        ],
+        "tags": ["Event APIs"],
         "summary": "Retrieves an event API version",
         "description": "Use this API to retrieve a single event API version by its ID.",
         "operationId": "getEventApiVersion",
@@ -15057,9 +14851,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Event APIs"
-        ],
+        "tags": ["Event APIs"],
         "summary": "Deletes an event API version",
         "description": "Use this API to delete an event API version by event API version ID.",
         "operationId": "deleteEventApiVersion",
@@ -15183,9 +14975,7 @@
         }
       },
       "patch": {
-        "tags": [
-          "Event APIs"
-        ],
+        "tags": ["Event APIs"],
         "summary": "Updates an event API by event API version ID",
         "description": "Use this API to update an event API version by event API version ID.You only need to specify the fields that need to be updated.",
         "operationId": "updateEventApiVersion",
@@ -15329,9 +15119,7 @@
     },
     "/api/v2/architecture/enums/{enumId}/versions/{id}": {
       "get": {
-        "tags": [
-          "Enums"
-        ],
+        "tags": ["Enums"],
         "summary": "Retrieves an enum version object",
         "description": "Use this API to retrieve a single enum version by its ID.",
         "operationId": "getEnumVersionForEnum",
@@ -15472,9 +15260,7 @@
         "deprecated": true
       },
       "delete": {
-        "tags": [
-          "Enums"
-        ],
+        "tags": ["Enums"],
         "summary": "Deletes an enum version",
         "description": "Use this API to delete an enum version. The version must not be in use by any events else it cannot be deleted. This also deletes the version's values.",
         "operationId": "deleteEnumVersionForEnum",
@@ -15601,9 +15387,7 @@
         "deprecated": true
       },
       "patch": {
-        "tags": [
-          "Enums"
-        ],
+        "tags": ["Enums"],
         "summary": "Updates an enum version object",
         "description": "Use this API to update an enum version. You only need to specify the fields that need to be updated.",
         "operationId": "updateEnumVersionForEnum",
@@ -15755,14 +15539,10 @@
         "deprecated": true
       }
     },
-    "/api/v2/architecture/applicationRegistrations/{id}": {
-
-    },
+    "/api/v2/architecture/applicationRegistrations/{id}": {},
     "/api/v2/architecture/events/{eventId}/versions/{id}": {
       "get": {
-        "tags": [
-          "Events"
-        ],
+        "tags": ["Events"],
         "summary": "Retrieves an event version object",
         "description": "Use this API to retrieve a single event version by its ID.",
         "operationId": "getEventVersionForEvent",
@@ -15903,9 +15683,7 @@
         "deprecated": true
       },
       "delete": {
-        "tags": [
-          "Events"
-        ],
+        "tags": ["Events"],
         "summary": "Deletes an event version object",
         "description": "Use this API to delete an event version.",
         "operationId": "deleteEventVersionForEvent",
@@ -16039,9 +15817,7 @@
         "deprecated": true
       },
       "patch": {
-        "tags": [
-          "Events"
-        ],
+        "tags": ["Events"],
         "summary": "Updates an event version object",
         "description": "Use this API to update an event version. You only need to specify the fields that need to be updated.",
         "operationId": "updateEventVersionForEvent",
@@ -16195,9 +15971,7 @@
     },
     "/api/v2/architecture/eventApis/{eventApiId}/versions": {
       "get": {
-        "tags": [
-          "Event APIs"
-        ],
+        "tags": ["Event APIs"],
         "summary": "Retrieves a list of event API versions",
         "description": "Use this API to retrieve a list of event API versions under a particular event API matching the given parameters.",
         "operationId": "getEventApiVersionsForEventApi",
@@ -16388,9 +16162,7 @@
         "deprecated": true
       },
       "post": {
-        "tags": [
-          "Event APIs"
-        ],
+        "tags": ["Event APIs"],
         "summary": "Creates an event API version",
         "description": "Use this API to create an event API version.",
         "operationId": "createEventApiVersionForEventApi",
@@ -16535,9 +16307,7 @@
     },
     "/api/v2/architecture/customAttributeDefinitions/{id}": {
       "get": {
-        "tags": [
-          "Custom Attribute Definitions"
-        ],
+        "tags": ["Custom Attribute Definitions"],
         "summary": "Retrieves a custom attribute definition object",
         "description": "Use this API to retrieve a single custom attribute by its ID.",
         "operationId": "getCustomAttributeDefinition",
@@ -16668,9 +16438,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Custom Attribute Definitions"
-        ],
+        "tags": ["Custom Attribute Definitions"],
         "summary": "Deletes a custom attribute definition object",
         "description": "Use this API to delete a custom attribute definition.",
         "operationId": "deleteCustomAttributeDefinition",
@@ -16794,9 +16562,7 @@
         }
       },
       "patch": {
-        "tags": [
-          "Custom Attribute Definitions"
-        ],
+        "tags": ["Custom Attribute Definitions"],
         "summary": "Updates a custom attribute definition object",
         "description": "Use this API to update a custom attribute definition. You can only update the associated entity types.",
         "operationId": "updateCustomAttributeDefinition",
@@ -16939,9 +16705,7 @@
     },
     "/api/v2/architecture/applicationVersions/{versionId}": {
       "get": {
-        "tags": [
-          "Applications"
-        ],
+        "tags": ["Applications"],
         "summary": "Retrieves an application version object",
         "description": "Use this API to retrieve a single application version by its ID.",
         "operationId": "getApplicationVersion",
@@ -17072,9 +16836,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Applications"
-        ],
+        "tags": ["Applications"],
         "summary": "Deletes an application version object",
         "description": "Use this API to delete an application version.",
         "operationId": "deleteApplicationVersion",
@@ -17198,9 +16960,7 @@
         }
       },
       "patch": {
-        "tags": [
-          "Applications"
-        ],
+        "tags": ["Applications"],
         "summary": "Updates an application version object",
         "description": "Use this API to update an application version. You only need to specify the fields that need to be updated.",
         "operationId": "updateApplicationVersion",
@@ -17364,9 +17124,7 @@
     },
     "/api/v2/architecture/applicationDomains/export/{ids}": {
       "get": {
-        "tags": [
-          "Application Domains"
-        ],
+        "tags": ["Application Domains"],
         "summary": "(Beta) Exports application domains and their entities",
         "description": "Use this API to export application domains and their nested entities. Please note that this endpoint is in beta and could be subject to change in the future",
         "operationId": "exportApplicationDomains",
@@ -17503,9 +17261,7 @@
     },
     "/api/v2/architecture/schemas/{schemaId}/versions/{id}": {
       "get": {
-        "tags": [
-          "Schemas"
-        ],
+        "tags": ["Schemas"],
         "summary": "Retrieves a schema version object",
         "description": "Use this API to retrieve a single schema by its ID.",
         "operationId": "getSchemaVersionForSchema",
@@ -17646,9 +17402,7 @@
         "deprecated": true
       },
       "delete": {
-        "tags": [
-          "Schemas"
-        ],
+        "tags": ["Schemas"],
         "summary": "Deletes a schema version object",
         "description": "Use this API to delete a schema version.",
         "operationId": "deleteSchemaVersionForSchema",
@@ -17782,9 +17536,7 @@
         "deprecated": true
       },
       "patch": {
-        "tags": [
-          "Schemas"
-        ],
+        "tags": ["Schemas"],
         "summary": "Updates a schema version object",
         "description": "Use this API to update a schema version.",
         "operationId": "updateSchemaVersionForSchema",
@@ -17935,14 +17687,10 @@
         "deprecated": true
       }
     },
-    "/api/v2/architecture/eventApiProductRegistrations/{id}": {
-
-    },
+    "/api/v2/architecture/eventApiProductRegistrations/{id}": {},
     "/api/v2/architecture/applicationDomains/import/{jobId}": {
       "get": {
-        "tags": [
-          "Application Domains"
-        ],
+        "tags": ["Application Domains"],
         "summary": "(Beta) Get import job to see its status and results",
         "operationId": "getImportJob",
         "parameters": [
@@ -18074,9 +17822,7 @@
     },
     "/api/v2/architecture/eventApiVersions/{versionId}/state": {
       "patch": {
-        "tags": [
-          "Event APIs"
-        ],
+        "tags": ["Event APIs"],
         "summary": "Updates the state of an event API version by event API version ID",
         "description": "Use this API to update the state of an event API version. You only need to specify the state ID field with the desired state ID.",
         "operationId": "updateEventApiVersionState",
@@ -18220,9 +17966,7 @@
     },
     "/api/v2/architecture/enums/{enumId}/versions/{id}/state": {
       "patch": {
-        "tags": [
-          "Enums"
-        ],
+        "tags": ["Enums"],
         "summary": "Updates the state of an enum version object",
         "description": "Use this API to update the state of an enum version. You only need to specify the target stateId field.",
         "operationId": "updateEnumVersionStateForEnum",
@@ -18376,9 +18120,7 @@
     },
     "/api/v2/architecture/eventApiProductVersions/{versionId}": {
       "get": {
-        "tags": [
-          "Event API Products"
-        ],
+        "tags": ["Event API Products"],
         "summary": "(Beta) Retrieves an event API product version",
         "description": "Use this API to retrieve a single event API product version by its ID.",
         "operationId": "getEventApiProductVersion",
@@ -18519,9 +18261,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Event API Products"
-        ],
+        "tags": ["Event API Products"],
         "summary": "(Beta) Deletes an event API product version by ID",
         "description": "Use this API to delete an event API product version by ID.",
         "operationId": "deleteEventApiProductVersion",
@@ -18645,9 +18385,7 @@
         }
       },
       "patch": {
-        "tags": [
-          "Event API Products"
-        ],
+        "tags": ["Event API Products"],
         "summary": "(Beta) Updates an event API product version by version ID",
         "description": "Use this API to update an event API product version. You only need to specify the fields that need to be updated.",
         "operationId": "updateEventApiProductVersion",
@@ -18791,9 +18529,7 @@
     },
     "/api/v2/architecture/messagingServiceScans/{scanId}/logs": {
       "get": {
-        "tags": [
-          "Messaging Service Scan Logs"
-        ],
+        "tags": ["Messaging Service Scan Logs"],
         "summary": "(Beta) Retrieves a list of messaging service scan logs",
         "description": "Use this API to retrieve a list of messaging service scan logs that match the given parameters.",
         "operationId": "getMessagingServiceScansLogs",
@@ -18960,9 +18696,7 @@
     },
     "/api/v2/architecture/events/{eventId}/versions/{id}/state": {
       "patch": {
-        "tags": [
-          "Events"
-        ],
+        "tags": ["Events"],
         "summary": "Updates the state of an event version object",
         "description": "Use this API to update the state of event version. You only need to specify the target stateId field",
         "operationId": "updateEventVersionStateForEvent",
@@ -19116,9 +18850,7 @@
     },
     "/api/v2/architecture/eventApis/{eventApiId}/versions/{id}": {
       "get": {
-        "tags": [
-          "Event APIs"
-        ],
+        "tags": ["Event APIs"],
         "summary": "Retrieves an event API version",
         "description": "Use this API to retrieve a single event API version using the parent ID and the version's ID.",
         "operationId": "getEventApiVersionForEventApi",
@@ -19259,9 +18991,7 @@
         "deprecated": true
       },
       "delete": {
-        "tags": [
-          "Event APIs"
-        ],
+        "tags": ["Event APIs"],
         "summary": "Deletes an event API version",
         "description": "Use this API to delete an event API version.",
         "operationId": "deleteEventApiVersionForEventApi",
@@ -19395,9 +19125,7 @@
         "deprecated": true
       },
       "patch": {
-        "tags": [
-          "Event APIs"
-        ],
+        "tags": ["Event APIs"],
         "summary": "Updates an event API",
         "description": "Use this API to update an event API version. You only need to specify the fields that need to be updated.",
         "operationId": "updateEventApiVersionForEventApi",
@@ -19551,9 +19279,7 @@
     },
     "/api/v2/architecture/applications/{applicationId}/versions": {
       "get": {
-        "tags": [
-          "Applications"
-        ],
+        "tags": ["Applications"],
         "summary": "Gets application version objects",
         "description": "Use this API to retrieve a list of application versions that match the given parameters.",
         "operationId": "getApplicationVersionsForApplication",
@@ -19726,9 +19452,7 @@
         "deprecated": true
       },
       "post": {
-        "tags": [
-          "Applications"
-        ],
+        "tags": ["Applications"],
         "summary": "Creates an application version object",
         "description": "Creates an application version object",
         "operationId": "createApplicationVersionForApplication",
@@ -19873,9 +19597,7 @@
     },
     "/api/v2/architecture/applicationVersions/{versionId}/state": {
       "patch": {
-        "tags": [
-          "Applications"
-        ],
+        "tags": ["Applications"],
         "summary": "Updates the state of an application version object",
         "description": "Use this API to update the state of an application version. You only need to specify the target stateId field.",
         "operationId": "updateApplicationVersionState",
@@ -20019,9 +19741,7 @@
     },
     "/api/v2/architecture/schemas/{schemaId}/versions/{id}/state": {
       "patch": {
-        "tags": [
-          "Schemas"
-        ],
+        "tags": ["Schemas"],
         "summary": "Updates the state of a schema version object",
         "description": "Use this API to update the state of a schema version.",
         "operationId": "updateSchemaVersionStateForSchema",
@@ -20175,9 +19895,7 @@
     },
     "/api/v2/architecture/messagingServices/{id}/removeAssociation": {
       "put": {
-        "tags": [
-          "Messaging Services"
-        ],
+        "tags": ["Messaging Services"],
         "summary": "(Beta) Removes a messaging service's association to the requested entity.",
         "description": "Use this API to remove the association between a messaging service and either of EVENT_MESH or EVENT_MANAGEMENT_AGENT.",
         "operationId": "removeAssociationMessagingService",
@@ -20321,9 +20039,7 @@
     },
     "/api/v2/architecture/eventApiProductVersions/{versionId}/state": {
       "patch": {
-        "tags": [
-          "Event API Products"
-        ],
+        "tags": ["Event API Products"],
         "summary": "Updates the state of an event API product version by ID",
         "description": "Use this API to update the state of an event API product version. You only need to specify the state ID field with the desired state ID.",
         "operationId": "updateEventApiProductVersionState",
@@ -20467,9 +20183,7 @@
     },
     "/api/v2/architecture/eventApis/{eventApiId}/versions/{id}/state": {
       "patch": {
-        "tags": [
-          "Event APIs"
-        ],
+        "tags": ["Event APIs"],
         "summary": "Updates the state of an event API version",
         "description": "Use this API to update the state of an event API version. You only need to specify the state ID field with the desired state ID.",
         "operationId": "updateEventApiVersionStateForEventApi",
@@ -20623,9 +20337,7 @@
     },
     "/api/v2/architecture/applications/{applicationId}/versions/{id}": {
       "get": {
-        "tags": [
-          "Applications"
-        ],
+        "tags": ["Applications"],
         "summary": "Retrieves an application version object",
         "description": "Use this API to retrieve a single application version by its ID.",
         "operationId": "getApplicationVersionForApplication",
@@ -20766,9 +20478,7 @@
         "deprecated": true
       },
       "delete": {
-        "tags": [
-          "Applications"
-        ],
+        "tags": ["Applications"],
         "summary": "Deletes an application version object",
         "description": "Use this API to delete an application version.",
         "operationId": "deleteApplicationVersionForApplication",
@@ -20902,9 +20612,7 @@
         "deprecated": true
       },
       "patch": {
-        "tags": [
-          "Applications"
-        ],
+        "tags": ["Applications"],
         "summary": "Updates an application version object",
         "description": "Use this API to update an application version. You only need to specify the fields that need to be updated.",
         "operationId": "updateApplicationVersionForApplication",
@@ -21058,9 +20766,7 @@
     },
     "/api/v2/architecture/eventManagementAgents/{id}/configuration/raw": {
       "get": {
-        "tags": [
-          "Event Management Agents"
-        ],
+        "tags": ["Event Management Agents"],
         "summary": "(Beta) Retrieves the raw configs in string format for an EMA object",
         "description": "Use this API to retrieve the raw configs for a single EMA by its ID.",
         "operationId": "getEventManagementAgentConfigRaw",
@@ -21193,9 +20899,7 @@
     },
     "/api/v2/architecture/eventApiProducts/{eventApiProductId}/versions": {
       "get": {
-        "tags": [
-          "Event API Products"
-        ],
+        "tags": ["Event API Products"],
         "summary": "Retrieves a list of event API product versions",
         "description": "Use this API to retrieve a list of event API product versions under a particular event API product matching the given parameters.",
         "operationId": "getEventApiProductVersionsForEventApiProduct",
@@ -21386,9 +21090,7 @@
         "deprecated": true
       },
       "post": {
-        "tags": [
-          "Event API Products"
-        ],
+        "tags": ["Event API Products"],
         "summary": "Creates an event API product version",
         "description": "Use this API to create an event API product version.",
         "operationId": "createEventApiProductVersionForEventApiProduct",
@@ -21533,9 +21235,7 @@
     },
     "/api/v2/architecture/messagingServiceScans/{scanId}/dataCollection": {
       "get": {
-        "tags": [
-          "Messaging Service Scan Data"
-        ],
+        "tags": ["Messaging Service Scan Data"],
         "summary": "(Beta) Retrieves a list of messaging service scan data",
         "description": "Use this API to retrieve a list of messaging service scan data that match the given parameters.",
         "operationId": "getMessagingServiceScansData",
@@ -21728,9 +21428,7 @@
     },
     "/api/v2/architecture/eventManagementAgents/{id}/configuration/file": {
       "get": {
-        "tags": [
-          "Event Management Agents"
-        ],
+        "tags": ["Event Management Agents"],
         "summary": "(Beta) Retrieves the raw configs in file format for an EMA object",
         "description": "Use this API to retrieve the raw configs for a single EMA by its ID.",
         "operationId": "getEventManagementAgentConfigFile",
@@ -21863,9 +21561,7 @@
     },
     "/api/v2/architecture/eventApis/{eventApiId}/versions/{id}/asyncApi": {
       "get": {
-        "tags": [
-          "Event APIs"
-        ],
+        "tags": ["Event APIs"],
         "summary": "Retrieves the AsyncAPI specification for an event API version",
         "description": "Use this API to retrieve the AsyncAPI specification for an event API version using the parent ID and the version's ID.",
         "operationId": "getEventApiVersionAsyncApiForEventApi",
@@ -21915,10 +21611,7 @@
             "required": false,
             "schema": {
               "type": "string",
-              "enum": [
-                "json",
-                "yaml"
-              ],
+              "enum": ["json", "yaml"],
               "default": "json"
             }
           },
@@ -22086,9 +21779,7 @@
     },
     "/api/v2/architecture/eventApiVersions/{eventApiVersionId}/asyncApi": {
       "get": {
-        "tags": [
-          "Event APIs"
-        ],
+        "tags": ["Event APIs"],
         "summary": "Retrieves the AsyncAPI specification for an event API version",
         "description": "Use this API to retrieve the AsyncAPI specification for an event API version.",
         "operationId": "getAsyncApiForEventApiVersion",
@@ -22119,10 +21810,7 @@
             "required": false,
             "schema": {
               "type": "string",
-              "enum": [
-                "json",
-                "yaml"
-              ],
+              "enum": ["json", "yaml"],
               "default": "json"
             }
           },
@@ -22309,9 +21997,7 @@
     },
     "/api/v2/architecture/messagingServices/{messagingServiceId}/scanStart": {
       "put": {
-        "tags": [
-          "Messaging Services"
-        ],
+        "tags": ["Messaging Services"],
         "summary": "(Beta) Requests a scan to run against a messaging service",
         "description": "Use this API to make a scan request on a messaging service object.",
         "operationId": "scanStartMessagingService",
@@ -22455,9 +22141,7 @@
     },
     "/api/v2/architecture/applications/{applicationId}/versions/{id}/state": {
       "patch": {
-        "tags": [
-          "Applications"
-        ],
+        "tags": ["Applications"],
         "summary": "Updates the state of an application version object",
         "description": "Use this API to update the state of an application version. You only need to specify the target stateId field.",
         "operationId": "updateApplicationVersionStateForApplication",
@@ -22611,9 +22295,7 @@
     },
     "/api/v2/architecture/eventApiProductMemAssociations/{memAssociationId}": {
       "delete": {
-        "tags": [
-          "Event API Products"
-        ],
+        "tags": ["Event API Products"],
         "summary": "(Beta) Disassociates a gateway messaging service from an event API product version by association ID",
         "description": "Use this API to disassociate an event API product version and gateway messaging service by association ID.",
         "operationId": "disassociateGatewayMessagingServiceFromEventApiProductVersionById",
@@ -22739,9 +22421,7 @@
     },
     "/api/v2/architecture/eventApiProducts/{eventApiProductId}/versions/{id}": {
       "get": {
-        "tags": [
-          "Event API Products"
-        ],
+        "tags": ["Event API Products"],
         "summary": "Retrieves an event API product version",
         "description": "Use this API to retrieve a single event API product version using the parent ID and the version's ID.",
         "operationId": "getEventApiProductVersionForEventApiProduct",
@@ -22882,9 +22562,7 @@
         "deprecated": true
       },
       "delete": {
-        "tags": [
-          "Event API Products"
-        ],
+        "tags": ["Event API Products"],
         "summary": "Deletes an event API product version",
         "description": "Use this API to delete an event API product version.",
         "operationId": "deleteEventApiProductVersionForEventApiProduct",
@@ -23018,9 +22696,7 @@
         "deprecated": true
       },
       "patch": {
-        "tags": [
-          "Event API Products"
-        ],
+        "tags": ["Event API Products"],
         "summary": "Updates an event API product version",
         "description": "Use this API to update an event API product version. You only need to specify the fields that need to be updated.",
         "operationId": "updateEventApiProductVersionForEventApiProduct",
@@ -23174,9 +22850,7 @@
     },
     "/api/v2/architecture/messagingServiceScans/{scanId}/dataCollection/{id}": {
       "get": {
-        "tags": [
-          "Messaging Service Scan Data"
-        ],
+        "tags": ["Messaging Service Scan Data"],
         "summary": "(Beta) Retrieves a messaging service scan data object",
         "description": "Use this API to retrieve a single messaging service scan data by its ID.",
         "operationId": "getMessagingServiceScanData",
@@ -23318,9 +22992,7 @@
     },
     "/api/v2/architecture/applications/{applicationId}/versions/{id}/asyncApi": {
       "get": {
-        "tags": [
-          "Applications"
-        ],
+        "tags": ["Applications"],
         "summary": "Retrieves the AsyncAPI specification for an application version",
         "description": "Use this API to retrieve the AsyncAPI specification for an application version using the parent ID and the version's ID.",
         "operationId": "getApplicationVersionAsyncApiForApplication",
@@ -23380,10 +23052,7 @@
             "required": false,
             "schema": {
               "type": "string",
-              "enum": [
-                "json",
-                "yaml"
-              ],
+              "enum": ["json", "yaml"],
               "default": "json"
             }
           }
@@ -23511,9 +23180,7 @@
     },
     "/api/v2/architecture/applicationVersions/{applicationVersionId}/asyncApi": {
       "get": {
-        "tags": [
-          "Applications"
-        ],
+        "tags": ["Applications"],
         "summary": "Retrieves the AsyncAPI specification for an application version",
         "description": "Use this API to retrieve the AsyncAPI specification for an application version.",
         "operationId": "getAsyncApiForApplicationVersion",
@@ -23534,10 +23201,7 @@
             "required": false,
             "schema": {
               "type": "string",
-              "enum": [
-                "json",
-                "yaml"
-              ],
+              "enum": ["json", "yaml"],
               "default": "json"
             }
           },
@@ -23695,9 +23359,7 @@
     },
     "/api/v2/architecture/eventApiProducts/{eventApiProductId}/versions/{id}/state": {
       "patch": {
-        "tags": [
-          "Event API Products"
-        ],
+        "tags": ["Event API Products"],
         "summary": "Updates the state of an event API product version",
         "description": "Use this API to update the state of an event API product version. You only need to specify the state ID field with the desired state ID.",
         "operationId": "updateEventApiProductVersionStateForEventApiProduct",
@@ -23851,9 +23513,7 @@
     },
     "/api/v2/architecture/eventApiProductVersions/{eventApiProductVersionId}/memAssociations": {
       "post": {
-        "tags": [
-          "Event API Products"
-        ],
+        "tags": ["Event API Products"],
         "summary": "(Beta) Associate gateway messaging service to event API product version",
         "description": "Use this API to associate an event API product version and gateway messaging service.",
         "operationId": "associateGatewayMessagingServiceToEAPVersion",
@@ -23997,9 +23657,7 @@
     },
     "/api/v2/architecture/eventApiProductVersions/{eventApiProductVersionId}/memAssociations/{memAssociationId}": {
       "delete": {
-        "tags": [
-          "Event API Products"
-        ],
+        "tags": ["Event API Products"],
         "summary": "(Beta) Disassociate gateway messaging service from event API product version",
         "description": "Use this API to disassociate an event API product version and gateway messaging service.",
         "operationId": "disassociateGatewayMessagingServiceToEAPVersion",
@@ -24136,9 +23794,7 @@
   "components": {
     "schemas": {
       "Address": {
-        "required": [
-          "addressLevels"
-        ],
+        "required": ["addressLevels"],
         "type": "object",
         "properties": {
           "createdTime": {
@@ -24169,9 +23825,7 @@
           },
           "addressType": {
             "type": "string",
-            "enum": [
-              "topic"
-            ]
+            "enum": ["topic"]
           },
           "id": {
             "type": "string"
@@ -24182,10 +23836,7 @@
         }
       },
       "AddressLevel": {
-        "required": [
-          "addressLevelType",
-          "name"
-        ],
+        "required": ["addressLevelType", "name"],
         "type": "object",
         "properties": {
           "name": {
@@ -24194,10 +23845,7 @@
           },
           "addressLevelType": {
             "type": "string",
-            "enum": [
-              "literal",
-              "variable"
-            ]
+            "enum": ["literal", "variable"]
           },
           "enumVersionId": {
             "type": "string"
@@ -24297,10 +23945,7 @@
             "minLength": 1,
             "type": "string",
             "example": "solace",
-            "enum": [
-              "kafka",
-              "solace"
-            ]
+            "enum": ["kafka", "solace"]
           },
           "applicationDomainId": {
             "type": "string",
@@ -24324,9 +23969,7 @@
         }
       },
       "ApplicationDomain": {
-        "required": [
-          "name"
-        ],
+        "required": ["name"],
         "type": "object",
         "properties": {
           "createdTime": {
@@ -24647,11 +24290,7 @@
         }
       },
       "ApplicationRegistration": {
-        "required": [
-          "applicationDomainId",
-          "name",
-          "registrationId"
-        ],
+        "required": ["applicationDomainId", "name", "registrationId"],
         "type": "object",
         "properties": {
           "createdTime": {
@@ -24727,10 +24366,7 @@
         }
       },
       "ApplicationVersion": {
-        "required": [
-          "applicationId",
-          "version"
-        ],
+        "required": ["applicationId", "version"],
         "type": "object",
         "properties": {
           "createdTime": {
@@ -24971,9 +24607,7 @@
         }
       },
       "Consumer": {
-        "required": [
-          "applicationVersionId"
-        ],
+        "required": ["applicationVersionId"],
         "type": "object",
         "properties": {
           "createdTime": {
@@ -25114,9 +24748,7 @@
           },
           "valueType": {
             "type": "string",
-            "enum": [
-              "STRING"
-            ]
+            "enum": ["STRING"]
           },
           "associatedEntityTypes": {
             "type": "array",
@@ -25343,10 +24975,7 @@
         }
       },
       "Event": {
-        "required": [
-          "applicationDomainId",
-          "name"
-        ],
+        "required": ["applicationDomainId", "name"],
         "type": "object",
         "properties": {
           "createdTime": {
@@ -25458,10 +25087,7 @@
           "brokerType": {
             "type": "string",
             "description": "The type of the broker used for the event API",
-            "enum": [
-              "kafka",
-              "solace"
-            ],
+            "enum": ["kafka", "solace"],
             "default": "solace"
           },
           "customAttributes": {
@@ -25530,10 +25156,7 @@
           "brokerType": {
             "type": "string",
             "description": "The type of the broker used for the event API product",
-            "enum": [
-              "kafka",
-              "solace"
-            ],
+            "enum": ["kafka", "solace"],
             "default": "solace"
           },
           "customAttributes": {
@@ -25631,9 +25254,7 @@
         }
       },
       "EventApiProductVersion": {
-        "required": [
-          "eventApiProductId"
-        ],
+        "required": ["eventApiProductId"],
         "type": "object",
         "properties": {
           "createdTime": {
@@ -25724,12 +25345,7 @@
           "approvalType": {
             "type": "string",
             "description": "Approval type",
-            "enum": [
-              "automatic",
-              "manual",
-              "automatic",
-              "manual"
-            ],
+            "enum": ["automatic", "manual", "automatic", "manual"],
             "default": "automatic"
           },
           "type": {
@@ -25796,9 +25412,7 @@
         }
       },
       "EventApiVersion": {
-        "required": [
-          "eventApiId"
-        ],
+        "required": ["eventApiId"],
         "type": "object",
         "properties": {
           "createdTime": {
@@ -25923,10 +25537,7 @@
         }
       },
       "EventManagementAgent": {
-        "required": [
-          "eventManagementAgentRegionId",
-          "name"
-        ],
+        "required": ["eventManagementAgentRegionId", "name"],
         "type": "object",
         "properties": {
           "createdTime": {
@@ -26187,10 +25798,7 @@
           "brokerType": {
             "type": "string",
             "description": "The type of the broker used in the event mesh.",
-            "enum": [
-              "kafka",
-              "solace"
-            ]
+            "enum": ["kafka", "solace"]
           },
           "applicationVersionIds": {
             "type": "array",
@@ -26253,10 +25861,7 @@
         }
       },
       "EventVersion": {
-        "required": [
-          "eventId",
-          "version"
-        ],
+        "required": ["eventId", "version"],
         "type": "object",
         "properties": {
           "createdTime": {
@@ -26574,12 +26179,7 @@
           },
           "status": {
             "type": "string",
-            "enum": [
-              "in_progress",
-              "error",
-              "validation_error",
-              "success"
-            ]
+            "enum": ["in_progress", "error", "validation_error", "success"]
           },
           "jobType": {
             "type": "string"
@@ -26665,10 +26265,7 @@
         }
       },
       "MessagingServiceAuthentication": {
-        "required": [
-          "authenticationType",
-          "name"
-        ],
+        "required": ["authenticationType", "name"],
         "type": "object",
         "properties": {
           "createdTime": {
@@ -26821,10 +26418,7 @@
         }
       },
       "MessagingServiceCredentialsn": {
-        "required": [
-          "credentials",
-          "name"
-        ],
+        "required": ["credentials", "name"],
         "type": "object",
         "properties": {
           "createdTime": {
@@ -26951,10 +26545,7 @@
               "type": "string",
               "description": "The list of destinations for EMA to send results to.",
               "example": "[\"EVENT_PORTAL\",\"FILE_WRITER\"]",
-              "enum": [
-                "EVENT_PORTAL",
-                "FILE_WRITER"
-              ]
+              "enum": ["EVENT_PORTAL", "FILE_WRITER"]
             }
           },
           "type": {
@@ -26984,11 +26575,7 @@
             "type": "string",
             "description": "The target association to be removed from the messaging service.",
             "example": "EVENT_MANAGEMENT_AGENT",
-            "enum": [
-              "RUNTIME_AGENT",
-              "EVENT_MESH",
-              "EVENT_MANAGEMENT_AGENT"
-            ]
+            "enum": ["RUNTIME_AGENT", "EVENT_MESH", "EVENT_MANAGEMENT_AGENT"]
           }
         }
       },
@@ -27406,10 +26993,7 @@
         }
       },
       "SchemaVersion": {
-        "required": [
-          "schemaId",
-          "version"
-        ],
+        "required": ["schemaId", "version"],
         "type": "object",
         "properties": {
           "createdTime": {
@@ -27547,20 +27131,12 @@
               "messageDeliveryMode": {
                 "type": "string",
                 "description": "The type of message delivery mode in the current event API product version",
-                "enum": [
-                  "direct",
-                  "guaranteed",
-                  "direct",
-                  "guaranteed"
-                ],
+                "enum": ["direct", "guaranteed", "direct", "guaranteed"],
                 "default": "direct"
               },
               "accessType": {
                 "type": "string",
-                "enum": [
-                  "exclusive",
-                  "non-exclusive"
-                ]
+                "enum": ["exclusive", "non-exclusive"]
               },
               "maximumTimeToLive": {
                 "type": "integer",
@@ -27571,12 +27147,7 @@
               "queueType": {
                 "type": "string",
                 "description": "The type of queue to be used in the current event API product version",
-                "enum": [
-                  "single",
-                  "combined",
-                  "single",
-                  "combined"
-                ],
+                "enum": ["single", "combined", "single", "combined"],
                 "default": "combined"
               },
               "maxMsgSpoolUsage": {
@@ -27680,10 +27251,7 @@
         }
       },
       "TopicAddressEnum": {
-        "required": [
-          "applicationDomainId",
-          "name"
-        ],
+        "required": ["applicationDomainId", "name"],
         "type": "object",
         "properties": {
           "createdTime": {
@@ -27761,9 +27329,7 @@
         }
       },
       "TopicAddressEnumValue": {
-        "required": [
-          "value"
-        ],
+        "required": ["value"],
         "type": "object",
         "properties": {
           "createdTime": {
@@ -27812,11 +27378,7 @@
         }
       },
       "TopicAddressEnumVersion": {
-        "required": [
-          "enumId",
-          "values",
-          "version"
-        ],
+        "required": ["enumId", "values", "version"],
         "type": "object",
         "properties": {
           "createdTime": {
@@ -27952,11 +27514,7 @@
         }
       },
       "TopicDomain": {
-        "required": [
-          "addressLevels",
-          "applicationDomainId",
-          "brokerType"
-        ],
+        "required": ["addressLevels", "applicationDomainId", "brokerType"],
         "type": "object",
         "properties": {
           "createdTime": {
@@ -28037,9 +27595,7 @@
         }
       },
       "TopicFilter": {
-        "required": [
-          "eventVersionIds"
-        ],
+        "required": ["eventVersionIds"],
         "type": "object",
         "properties": {
           "createdTime": {

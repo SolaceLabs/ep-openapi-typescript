@@ -14,7 +14,7 @@ import {
   SchemasService,
   SchemaVersion,
   SchemaVersionResponse,
-} from '../../../generated/@solace-labs/ep-openapi-node';
+} from '../../../src/@solace-labs/ep-openapi-node';
 
 const scriptName: string = path.basename(__filename);
 TestLogger.logMessage(scriptName, ">>> starting ...");

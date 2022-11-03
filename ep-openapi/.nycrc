@@ -6,17 +6,8 @@
   "branches": 0,
   "functions": 4,
   "temp-dir": "./test/logs/nyc_output",
-  "reporter": [
-    "html",
-    "text",
-    "text-summary",
-    "lcov"
-  ],
+  "reporter": ["html", "text", "text-summary", "lcov"],
   "report-dir": "./test/logs/coverage",
-  "include": [
-    "generated/@solace-labs/ep-openapi-node/**/*.ts"
-  ],
-  "exclude": [
-    "test"
-  ]
+  "include": ["src/@solace-labs/ep-openapi-node/**/*.ts"],
+  "exclude": ["test"]
 }

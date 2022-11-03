@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Solace Event Portal Open API Node'
+project = 'Solace Event Portal Open API'
 copyright = '2022, Solace Corporation, Ricardo Gomez-Ulmke, <ricardo.gomez-ulmke@solace.com>'
 author = 'Ricardo Gomez-Ulmke'
 

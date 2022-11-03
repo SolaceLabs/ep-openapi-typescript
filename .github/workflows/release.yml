@@ -43,6 +43,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+          registry-url: 'https://registry.npmjs.org'
 
       - name: env after install
         if: env.DEBUG_FLAG == 'true'
@@ -54,7 +55,7 @@ jobs:
           echo "docker-compose --version"; docker-compose --version
 
       - name: "docs:setup python"
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: 3.8
 

@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
 env:
   DEBUG_FLAG: ${{ false }}
+  EP_OPENAPI_DIR: "ep-openapi"
 
 jobs:
   release-docs:
@@ -38,6 +39,11 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+
+      - name: "npm install"
+        run: |
+          cd "${EP_OPENAPI_DIR}"
+          npm install
 
       - name: "docs:make"
         run: |

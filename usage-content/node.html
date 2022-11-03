@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpenAPI NodeJS Client for Solace Event Portal &mdash; Solace Event Portal Open API r0.0.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/contentui.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="OpenAPI Browser Client for Solace Event Portal" href="browser.html" />
+    <link rel="prev" title="Usage" href="../usage.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Solace Event Portal Open API
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Guides</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">Usage</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">OpenAPI NodeJS Client for Solace Event Portal</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install">Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#general">General</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#use-of-fetch-with-proxy">Use of <cite>fetch-with-proxy</cite></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#openapiconfig">OpenAPIConfig</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="browser.html">OpenAPI Browser Client for Solace Event Portal</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ep-openapi-tsdoc.html">EP OpenAPI Typescript Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Solace Event Portal Open API</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../usage.html">Usage</a></li>
+      <li class="breadcrumb-item active">OpenAPI NodeJS Client for Solace Event Portal</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/usage-content/node.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="openapi-nodejs-client-for-solace-event-portal">
+<span id="usage-content-node"></span><h1>OpenAPI NodeJS Client for Solace Event Portal<a class="headerlink" href="#openapi-nodejs-client-for-solace-event-portal" title="Permalink to this heading"></a></h1>
+<p>Generated with <a class="reference external" href="https://github.com/ferdikoomen/openapi-typescript-codegen">OpenAPI Typescript Codegen</a>.</p>
+<p>Version: 0.19.0</p>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>node 16.x</p></li>
+</ul>
+</section>
+<section id="install">
+<h2>Install<a class="headerlink" href="#install" title="Permalink to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npm install @solace-labs/ep-openapi-node
+</pre></div>
+</div>
+</section>
+<section id="general">
+<h2>General<a class="headerlink" href="#general" title="Permalink to this heading"></a></h2>
+<section id="use-of-fetch-with-proxy">
+<h3>Use of <cite>fetch-with-proxy</cite><a class="headerlink" href="#use-of-fetch-with-proxy" title="Permalink to this heading"></a></h3>
+<p>Node <cite>fetch</cite> replaced with <cite>fetch-with-proxy</cite>.</p>
+<p>See <a class="reference external" href="https://github.com/touv/node-fetch-with-proxy#readme">node-fetch-with-proxy</a> for details.</p>
+</section>
+<section id="openapiconfig">
+<h3>OpenAPIConfig<a class="headerlink" href="#openapiconfig" title="Permalink to this heading"></a></h3>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="nx">OpenAPIConfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">BASE</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Resolver</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// new</span><span class="w"></span>
+<span class="w">  </span><span class="nx">VERSION</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">WITH_CREDENTIALS</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">CREDENTIALS</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;include&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s1">&#39;omit&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s1">&#39;same-origin&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">TOKEN?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Resolver</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">USERNAME?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Resolver</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">PASSWORD?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Resolver</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">HEADERS?</span><span class="o">:</span><span class="w"> </span><span class="kt">Headers</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Resolver</span><span class="o">&lt;</span><span class="nx">Headers</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">ENCODE_PATH</span><span class="o">?:</span><span class="w"> </span><span class="p">(</span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
+<p>Configure OpenAPI Object:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">OpenAPI</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@solace-labs/ep-openapi-node&quot;</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">// to use a different base url than specified in the spec:</span><span class="w"></span>
+<span class="nx">OpenAPI</span><span class="p">.</span><span class="nx">BASE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;{base-url}&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="nx">OpenAPI</span><span class="p">.</span><span class="nx">WITH_CREDENTIALS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"></span>
+<span class="nx">OpenAPI</span><span class="p">.</span><span class="nx">CREDENTIALS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;include&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="nx">OpenAPI</span><span class="p">.</span><span class="nx">TOKEN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;{token}&quot;</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Configure OpenAPI Object using a Resolver for the BASE Url:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">getBase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="c1">// set your base ...</span><span class="w"></span>
+<span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">myBase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="nx">or</span><span class="w"></span>
+<span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">myBase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="p">...</span><span class="w"></span>
+<span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">myBase</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="c1">// make use of it</span><span class="w"></span>
+<span class="nx">OpenAPI</span><span class="p">.</span><span class="nx">BASE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">getBase</span><span class="p">();</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Example: Create an Application Domain:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">ApplicationDomainResponse</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">ApplicationDomainsService</span><span class="p">,</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@solace-labs/ep-openapi-node&quot;</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">applicationDomainResponse</span><span class="o">:</span><span class="w"> </span><span class="kt">ApplicationDomainResponse</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">ApplicationDomainsService</span><span class="p">.</span><span class="nx">createApplicationDomain</span><span class="p">({</span><span class="w"></span>
+<span class="w">    </span><span class="nx">requestBody</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;my-application-domain&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="p">});</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../usage.html" class="btn btn-neutral float-left" title="Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="browser.html" class="btn btn-neutral float-right" title="OpenAPI Browser Client for Solace Event Portal" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Solace Corporation, Ricardo Gomez-Ulmke, &lt;ricardo.gomez-ulmke@solace.com&gt;.
+      <span class="lastupdated">Last updated on 03 Nov 2022 at 17:43.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

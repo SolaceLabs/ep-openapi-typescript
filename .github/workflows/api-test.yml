@@ -35,7 +35,8 @@ jobs:
         if: github.event_name == 'workflow_dispatch' && github.actor != 'ricardojosegomezulmke'
         run: |
           echo "not authorized"
-          echo '::set-output name=IS_AUTHORIZED::false'
+          # echo '::set-output name=IS_AUTHORIZED::false'
+          echo "{IS_AUTHORIZED}={false}" >> $GITHUB_OUTPUT
         id: auth
       - name: Cancel Workflow
         if: ${{ always() && steps.auth.outputs.IS_AUTHORIZED == 'false' }}
@@ -56,7 +57,7 @@ jobs:
           env | grep TEST
 
       - name: setup node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
 
@@ -99,7 +100,7 @@ jobs:
 
       - name: Archive Test Logs
         if: ${{ (failure() && !cancelled()) || (always() && (github.event_name=='workflow_dispatch' || env.DEBUG_FLAG=='true') ) }}
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ env.EP_OPENAPI_TEST_LOGS_OUTPUT_NAME }}
           path: ${{ github.workspace }}/${{ env.EP_OPENAPI_TEST_LOGS_DIR }}

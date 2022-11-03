@@ -1,0 +1,20 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPointStrategy": "resolve",
+  "entryPoints": [
+    "./src/@solace-labs/ep-openapi-node/index.ts",
+  ],
+  "out": "../docs/source/_generated/ep-tsdoc-content/tsdocs",
+  "includeVersion": true,
+  "hideGenerator": true,
+  "categorizeByGroup": true,
+  "excludePrivate": false,
+  "excludeExternals": false,
+  "excludeProtected": false,
+  "name": "EP OpenAPI",
+  "logLevel": "Verbose",
+  "treatWarningsAsErrors": true,
+  "sort": ["kind", "instance-first", "alphabetical"],
+  "disableSources": false,
+  "tsconfig": "./typedoc.tsconfig.json"
+}

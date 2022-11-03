@@ -6,7 +6,7 @@ env:
   DEBUG_FLAG: ${{ false }}
 
 jobs:
-  release:
+  release-docs:
     runs-on: ubuntu-20.04
     steps:
       - name: Check Auth

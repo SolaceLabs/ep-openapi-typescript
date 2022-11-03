@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 env:
   DEBUG_FLAG: ${{ false }}
-  EP_OPENAPI_DIR: "ep-openapi"
+  RELEASE_DIR: "release"
 
 jobs:
   release-docs:
@@ -40,15 +40,10 @@ jobs:
         with:
           node-version: 16
 
-      - name: "npm install"
+      - name: "build"
         run: |
-          cd "${EP_OPENAPI_DIR}"
-          npm install
-
-      - name: "docs:make"
-        run: |
-          cd docs
-          ./make.sh
+          cd "${RELEASE_DIR}"
+          ./build.sh
 
       - name: "docs: publish to gh-pages"
         run: |
@@ -57,7 +52,7 @@ jobs:
           date > generated.txt
           git config user.name github-actions
           git config user.email github-actions@github.com
-          rsync -av ./docs/build/html/ gh-pages/
+          rsync -av ./release/working_dir/docs/build/html/ gh-pages/
           cd gh-pages
           git add -A
           git commit --allow-empty -F ../generated.txt

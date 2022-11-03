@@ -15,6 +15,7 @@ ln -s ep-openapi-spec.{version}.json ep-openapi-spec.json
 npm install
 npm run build
 npm run compile:spec
+npm run build:tsdocs
 ```
 
 ## Run Tests

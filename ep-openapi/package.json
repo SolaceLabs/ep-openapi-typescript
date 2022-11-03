@@ -1,10 +1,11 @@
 {
   "name": "@solace-labs/ep-openapi",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Code gen and tests for Solace Event Portal Open Api",
   "scripts": {
-    "build": "tsc && ts-node build.ts",
-    "compile": "tsc",
+    "build:src": "ts-node generate-src.ts",
+    "build:tsdocs": "ts-node build-tsdocs.ts",
+    "build": "npm run build:src && tsc && npm run build:tsdocs",
     "compile:spec": "tsc --project tsconfig.compile-spec.json",
     "test": ". ./test/source.env.sh && nyc mocha --config test/.mocharc.yml test/**/**.spec.ts && unset_source_env",
     "test:pretty": ". ./test/source.env.sh && nyc mocha --config test/.mocharc.yml test/**/**.*.spec.ts | pino-pretty && unset_source_env"
@@ -53,6 +54,7 @@
     "sinon": "^11.1.2",
     "supertest": "^6.1.3",
     "ts-node": "^10.8.1",
+    "typedoc": "^0.23.20",
     "typescript": "^4.3.5",
     "uuidv4": "^6.2.11"
   }

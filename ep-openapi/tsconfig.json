@@ -1,36 +1,20 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "target":"es2021",
+    "outDir": "dist",
+    "target": "es2021",
+    "lib": ["es2021", "dom"],
     "module": "commonjs",
-    "lib": ["es2021", "dom" ],
-    "declaration": true,
-    "strict": true,
-    "noImplicitAny": true,
     "esModuleInterop": true,
+    "declaration": true,
     "moduleResolution": "node",
-    "strictNullChecks": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "strict": false,
     "skipLibCheck": true,
-    "sourceMap": true,
-    "strictPropertyInitialization":false,
-    "resolveJsonModule": true,
-    "outDir": "./dist",
-    "typeRoots": [
-      "./node_modules/@types",
-    ]
+    "forceConsistentCasingInFileNames": true,
+    "strictPropertyInitialization": false
   },
-  "include": [
-    "build.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "_todo",
-    "**/_todo.*"
-  ]
+  "exclude": ["node_modules"],
+  "include": ["src/@solace-labs/**/*.ts"]
 }

@@ -6,12 +6,12 @@ scriptName=$(basename $(test -L "$0" && readlink "$0" || echo "$0"));
 # generate tsdocs
 cd $scriptDir/../ep-openapi
   code=$?; if [[ $code != 0 ]]; then echo ">>> XT_ERROR - $code make html"; exit 1; fi
-npm run build:tsdocs
+npm run build
   code=$?;
   # run npm install and try again
   if [[ $code != 0 ]]; then
     npm install;
-    npm run build:tsdocs;
+    npm run build;
     code=$?; if [[ $code != 0 ]]; then echo ">>> XT_ERROR - $code make html"; exit 1; fi
   fi
 

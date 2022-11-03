@@ -24,7 +24,18 @@ const copySourcesToWorkingDir = () => {
   if(s.cp('-rf', CONSTANTS.EpOpenApiDir, CONSTANTS.WorkingDir).code !== 0) process.exit(1);
   if(s.rm('-rf', `${CONSTANTS.WorkingEpOpenApiDir}/dist`).code !== 0) process.exit(1);
   if(s.rm('-rf', `${CONSTANTS.WorkingEpOpenApiDir}/node_modules`).code !== 0) process.exit(1);
-  if(s.rm('-rf', `${CONSTANTS.WorkingEpOpenApiDir}/generated`).code !== 0) process.exit(1);
+  if(s.rm('-rf', `${CONSTANTS.WorkingEpOpenApiDir}/src`).code !== 0) process.exit(1);
+  console.log(`${logName}: success.`);
+}
+
+const copyDocsToWorkingDir = () => {
+  const funcName = 'copyDocsToWorkingDir';
+  const logName = `${scriptDir}/${scriptName}.${funcName}()`;
+  console.log(`${logName}: starting ...`);
+
+  console.log(`${logName}: copying docs to working dir ...`);
+  if(s.cp('-rf', CONSTANTS.DocsDir, CONSTANTS.WorkingDir).code !== 0) process.exit(1);
+  if(s.rm('-rf', `${CONSTANTS.WorkdingDocsDir}/build`).code !== 0) process.exit(1);
   console.log(`${logName}: success.`);
 }
 
@@ -51,9 +62,9 @@ const copyAssets = () => {
     if(s.cp('-r', `${srcDir}/*`, `${outDir}`).code !== 0) process.exit(1);  
   }
 
-  const SrcDirBrowser: string = `${CONSTANTS.WorkingEpOpenApiDir}/generated/@solace-labs/ep-openapi-browser`;
+  const SrcDirBrowser: string = `${CONSTANTS.WorkingEpOpenApiDir}/src/@solace-labs/ep-openapi-browser`;
   const OutDirBrowser: string = `${CONSTANTS.ReleaseDirBrowser}/src`;
-  const SrcDirNode: string = `${CONSTANTS.WorkingEpOpenApiDir}/generated/@solace-labs/ep-openapi-node`;
+  const SrcDirNode: string = `${CONSTANTS.WorkingEpOpenApiDir}/src/@solace-labs/ep-openapi-node`;
   const OutDirNode: string = `${CONSTANTS.ReleaseDirNode}/src`;
 
   console.log(`${logName}: starting ...`);
@@ -90,6 +101,7 @@ const createPackageJsonVersion = () => {
   console.log(`${logName}: starting ...`);
   createVersion(CONSTANTS.ReleaseDirNode);
   createVersion(CONSTANTS.ReleaseDirBrowser);
+  createVersion(CONSTANTS.WorkingEpOpenApiDir);
   console.log(`${logName}: success.`);
 }
 const compileSrcs = () => {
@@ -107,6 +119,18 @@ const compileSrcs = () => {
 
   console.log(`${logName}: success.`);
 }
+const buildDocs = () => {
+  const funcName = 'buildDocs';
+  const logName = `${scriptDir}/${scriptName}.${funcName}()`;
+  console.log(`${logName}: starting ...`);
+  s.cd(`${CONSTANTS.WorkdingDocsDir}`);
+  console.log(`${logName}: directory = ${s.exec(`pwd`)}`);
+  // if(s.chmod('u+x', 'make.sh').code !== 0) process.exit(1);
+  if(s.exec('./make.sh').code !== 0) process.exit(1);
+  if(s.cd(`${scriptDir}`).code !== 0) process.exit(1);
+  console.log(`${logName}: success.`);
+}
+
 
 const main = () => {
   const funcName = 'main';
@@ -115,10 +139,12 @@ const main = () => {
   
   prepare();
   copySourcesToWorkingDir();
+  copyDocsToWorkingDir();
   buildEpOpenApi();
   copyAssets();
   createPackageJsonVersion();
   compileSrcs();
+  buildDocs();
 
   console.log(`${logName}: success.`);
 }

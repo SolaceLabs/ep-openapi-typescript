@@ -1,6 +1,6 @@
 {
   "name": "@solace-labs/ep-openapi",
-  "version": "2.0.1",
+  "version": "2.0.5",
   "description": "Code gen and tests for Solace Event Portal Open Api",
   "scripts": {
     "build:src": "ts-node generate-src.ts",

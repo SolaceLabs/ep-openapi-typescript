@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "build": "ts-node build.ts",
-    "publish": "ts-node publish.ts"
+    "publish": "ts-node publish.ts",
+    "build:apim": "ts-node build-apim.ts"
   },
   "author": "Solace Corporation",
   "contributors": [

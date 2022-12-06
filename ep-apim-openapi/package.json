@@ -1,7 +1,7 @@
 {
-  "name": "@solace-labs/ep-openapi",
-  "version": "2.0.5",
-  "description": "Code gen and tests for Solace Event Portal Open Api",
+  "name": "@solace-labs/ep-apim-openapi",
+  "version": "0.1.0",
+  "description": "Code gen and tests for Solace Event Portal APIM Open Api",
   "scripts": {
     "build:src": "ts-node generate-src.ts",
     "build:tsdocs": "ts-node build-tsdocs.ts",
@@ -10,9 +10,11 @@
     "test": ". ./test/source.env.sh && nyc mocha --config test/.mocharc.yml test/**/**.spec.ts && unset_source_env",
     "test:pretty": ". ./test/source.env.sh && nyc mocha --config test/.mocharc.yml test/**/**.*.spec.ts | pino-pretty && unset_source_env"
   },
+
   "repository": {
     "type": "git",
-    "url": "https://github.com/SolaceLabs/ep-openapi-typescript.git"
+    "url": "github:SolaceLabs/ep-openapi-typescript",
+    "directory": "ep-apim-openapi"
   },
   "keywords": [
     "api management",

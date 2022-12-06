@@ -1,0 +1,36 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "target":"ES6",
+    "module": "commonjs",
+    "lib": ["ES6", "dom" ],
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "declaration": true,
+    "strict": false,
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "alwaysStrict": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": false,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strictPropertyInitialization":false,
+    "resolveJsonModule": true,
+    "outDir": "./dist-generated",
+    "typeRoots": [
+      "./node_modules/@types"
+    ]
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "_todo",
+    "**/_todo.*"
+  ]
+}

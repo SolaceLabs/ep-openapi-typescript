@@ -1,13 +1,14 @@
 {
-  "name": "@solace-labs/ep-openapi-node",
-  "version": "2.0.5-build.001",
+  "name": "@solace-labs/ep-apim-openapi-node",
+  "version": "2.0.0-alpha.001",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "description": "Solace Event Portal - OpenAPI Client for NodeJS (Typescript)",
+  "description": "Solace Event Portal - APIM OpenAPI Client for NodeJS (Typescript)",
   "homepage": "https://github.com/SolaceLabs/ep-openapi-typescript",
   "repository": {
     "type": "git",
-    "url": "https://github.com/SolaceLabs/ep-openapi-typescript"
+    "url": "github:SolaceLabs/ep-openapi-typescript",
+    "directory": "ep-apim-openapi"
   },
   "bugs": {
     "url": "https://github.com/SolaceLabs/ep-openapi-typescript/issues"
@@ -19,7 +20,7 @@
       "email": "ricardo.gomez-ulmke@solace.com"
     }
   ],
-  "license": "MIT",
+  "license": "Apache-2.0",
   "keywords": [
     "solace",
     "asyncapi",

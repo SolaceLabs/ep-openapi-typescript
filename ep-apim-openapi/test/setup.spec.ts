@@ -4,7 +4,7 @@ import { expect } from 'chai';
 import { TestLogger } from "./lib/TestLogger";
 import TestConfig from "./lib/TestConfig";
 import { TestContext } from "./lib/TestContext";
-import { OpenAPI } from '../src/@solace-labs/ep-openapi-node';
+import { OpenAPI } from '../src/@solace-labs/ep-apim-openapi-node';
 
 // load test stub
 const x = require('./lib/TestStub');

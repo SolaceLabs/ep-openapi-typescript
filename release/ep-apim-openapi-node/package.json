@@ -1,6 +1,6 @@
 {
   "name": "@solace-labs/ep-apim-openapi-node",
-  "version": "2.0.0-alpha.001",
+  "version": "2.0.0-alpha.002",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "description": "Solace Event Portal - APIM OpenAPI Client for NodeJS (Typescript)",
